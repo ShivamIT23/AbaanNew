@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
             Home
             <div
-              class="w-0 h-0 
+              className="w-0 h-0 
             border-l-[0.4vw] border-l-transparent 
             border-r-[0.4vw] border-r-transparent 
             border-t-[0.4vw] border-t-red-600
@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
             Product Page
             <div
-              class="w-0 h-0 
+              className="w-0 h-0 
             border-l-[0.4vw] border-l-transparent 
             border-r-[0.4vw] border-r-transparent 
             border-t-[0.4vw] border-t-black lgmd:border-l-[0.5vw] lgmd:border-r-[0.5vw] lgmd:border-t-[0.5vw]"

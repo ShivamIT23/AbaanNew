@@ -48,7 +48,7 @@ export default function Range() {
       }}
       className="min-h-[100svh] h-fit relative w-[100svw]"
     >
-      <div className="absolute -top-36 left-0 w-64">
+      <div className="absolute -top-20 lg:-top-36 left-0 w-0 md:w-36 lg:w-60 z-[10]">
         <ChocolateSide />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="" />

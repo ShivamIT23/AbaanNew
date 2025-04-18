@@ -83,7 +83,7 @@ export default function HeartPeople() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col gap-6 px-[5vw] items-center h-fit text-center"
+            className="flex flex-col gap-6 font-archivo px-[5vw] items-center h-fit text-center"
           >
             <p className="text-[#0F0200] font-bold">
               {peopleThoughts[customerNumber].para}

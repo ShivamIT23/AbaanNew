@@ -10,7 +10,7 @@ export default function Favorite() {
       }}
       className="min-h-[100svh] relative w-[100svw]"
     >
-      <div className="absolute top-0 left-0 w-64">
+      <div className="absolute top-0 left-0 w-0 md:w-36 lg:w-60 z-[10]">
         <ChocolateSide />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="" />

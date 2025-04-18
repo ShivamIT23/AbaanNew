@@ -11,45 +11,18 @@ import HeartPeople from "../components/homepage/HeartPeople/HeartPeople";
 import Arrival from "../components/Arrival/Arrival";
 import Instagram from "../components/Instagram/Instagram";
 
-import { motion, AnimatePresence } from "framer-motion";
 
 const Home = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % 2);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="w-full">
       <Hero />
       <VideoSection />
-      <FemaleImage index={index} />
+      <FemaleImage />
       <Favorite />
-      <div className="bg-white w-full h-fit">
-       <AnimatePresence mode="wait">
-  {index === 0 && (
-    <motion.div
-      key="banner-and-range"
-      initial={{ opacity: 0, scale: 0 ,y:10 }}
-      animate={{ opacity: 1, scale: 1 ,y:0 }}
-      exit={{ opacity:0 , scale: 0 ,y:10}}
-      transition={{
-        duration: 0.6,
-        ease: [0.15, 0.6, 0.15, 0.7], // custom cubic bezier
-      }}
-      className="flex flex-col h-fit"
-    >
       <Banner imgSrc={"/images/banner.png"} />
       <Range />
-    </motion.div>
-  )}
-</AnimatePresence> 
-      </div>
-      <Category index={index} />
+      <Category />
       <Banner imgSrc={"/images/banner2.png"} />
       <Sellers />
       <HeartPeople />

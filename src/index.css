@@ -18,6 +18,10 @@
   }
 }
 
+.archivo ,p , button{
+  font-family: "Archivo", sans-serif;
+}
+
 body,
 html {
   scroll-behavior: smooth;
@@ -37,4 +41,21 @@ html {
       #eaf8f9 91%
     );
   }
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
 }

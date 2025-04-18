@@ -13,9 +13,9 @@ export default function VideoSection() {
         </p>
       </div>
       <div className="relative h-fit flex justify-center">
-        <div className="absolute inset-0 w-full md:w-[41vw] h-full flex justify-center items-center z-0">
-          <div className="w-[80%] md:w-[39vw] h-[70%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7f00ff] via-[#e100ff] to-transparent rounded-full blur-3xl opacity-70" />
-          <div className="absolute z-10 w-full md:w-[41vw] h-full">
+        <div className="absolute inset-0 w-full md:w-[71vw] h-full flex justify-center items-center z-0">
+          <div className="w-[80%] md:w-[69vw] h-[70%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7f00ff] via-[#e100ff] to-transparent rounded-full blur-3xl opacity-70" />
+          <div className="absolute z-10 w-full md:w-[71vw] h-full">
             {/* Splashes */}
             <img
               src="/images/splashLeft.png"
@@ -29,7 +29,7 @@ export default function VideoSection() {
         </div>
         <div className="absolute md:w-20 lg:w-32 md:h-20 lg:h-32 md:-top-2 lg:-top-6 md:-left-2 lg:-left-6 rounded-xl z-0 bg-gray-100"></div>
         <div className="absolute md:w-20 lg:w-36 shadow-md h-32 md:-bottom-2 lg:-bottom-6 md:right-[30%] rounded-xl z-0 bg-gray-100"></div>
-        <div className="w-[80%] md:w-[42vw] box-border rounded-2xl h-fit bg-gray-100 p-[0.8vw] relative z-20">
+        <div className="w-[80%] md:w-[72vw] box-border rounded-2xl h-fit bg-gray-100 p-[0.8vw] relative z-20">
           <video
             src="/video/abaan1.mp4"
             className="w-full rounded-2xl"

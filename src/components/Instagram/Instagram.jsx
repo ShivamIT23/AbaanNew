@@ -9,7 +9,7 @@ export default function Instagram() {
       }}
       className="min-h-[90svh] h-fit relative w-[100svw]"
     >
-      <div className="absolute -bottom-64 left-0 w-64 z-20">
+      <div className="absolute -bottom-32 lg:-bottom-64 left-0 w-0 md:w-36 lg:w-60 z-[20]">
         <ChocolateSide />
       </div>
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pt-28">
