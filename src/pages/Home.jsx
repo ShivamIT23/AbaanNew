@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../components/homepage/hero/Hero";
-import VideoSection from "../components/homepage/videoSection/videoSection";
+import VideoSection from "../components/homepage/videoSection/VideoSection";
 import FemaleImage from "../components/homepage/FemaleImage/FemaleImage";
 import Favorite from "../components/homepage/Favorite/Favorite";
 import Banner from "../components/Banner/Banner";
