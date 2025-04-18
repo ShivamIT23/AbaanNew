@@ -1,0 +1,10 @@
+.shineback{/* Gradient */
+
+    position: absolute;
+    right: 50%;
+    translate: 50% 45%;
+    bottom: 50%;
+    
+    background: radial-gradient(50% 50% at 50% 50%, #FBAB2A 0%, #FFFFFF 90%);
+    border-radius: 546px;
+    }

@@ -1,0 +1,52 @@
+.globalHeaderFont {
+  font-family: "Berkshire Swash", sans-serif;
+  font-weight: 400;
+  color: #212529;
+  line-height: 100%;
+}
+
+.globalHeaderFont span {
+  color: #ec1d23;
+}
+
+.globalPadding {
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+
+.itemCard:hover{
+  box-shadow :0px 4px 20px #36196A60;
+}
+
+@media only screen and (min-width: 375px) {
+}
+
+@media only screen and (min-width: 480px) {
+}
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) {
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/*(900px and up) */
+@media only screen and (min-width: 900px) {
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+  .globalPadding {
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 1280px) {
+}
+
+/*  (1350px and up) */
+@media only screen and (min-width: 1440px) {
+}
