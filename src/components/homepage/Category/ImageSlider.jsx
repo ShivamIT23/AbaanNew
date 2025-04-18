@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
-const images = ["dates", "kunafa", "dates", "kunafa"];
+const images = ["dates", "kunafa", "baklava", "chocoBar"];
 
 export default function ImageSlider() {
   const sliderRef = useRef(null);

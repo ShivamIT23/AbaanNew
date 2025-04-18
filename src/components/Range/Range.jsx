@@ -65,7 +65,7 @@ export default function Range() {
         <img
           src="/images/nuts.png"
           alt="nuts"
-          className="absolute w-44 drop-shadow-lg top-[25%] -translate-y-1/2 right-[10%]"
+          className="absolute  w-0 md:w-28 lg:w-40 z-10 drop-shadow-lg top-[25%] -translate-y-1/2 right-[10%]"
         />
         <div className="grid grid-cols-3 gap-8 px-[16vw] py-[8vh]">
           {products.map((card,index)=>{
@@ -75,7 +75,7 @@ export default function Range() {
           })}
         </div>
       </div>
-      <div className="absolute -bottom-52 right-0 w-64 z-10">
+      <div className="absolute -bottom-36 lg:-bottom-52 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight.png" alt="" className="drop-shadow-lg" />
       </div>
     </div>
