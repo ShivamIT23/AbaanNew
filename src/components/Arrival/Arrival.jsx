@@ -1,9 +1,15 @@
 import React from "react";
 import Card from "../homepage/Favorite/Card";
+import { motion } from "framer-motion";
 
-export default function Arrival() {
+export default function Arrival({startAnimation}) {
   return (
-    <div
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       className="min-h-[100svh] bg-white relative w-[100svw]"
     >
       <div className="flex flex-col items-center gap-8 px-[10vw] py-16">
@@ -46,6 +52,6 @@ Dates"
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

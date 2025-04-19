@@ -1,5 +1,6 @@
 import React from "react";
 import ChocolateSide from "../ChocolateSide/ChocolateSide";
+import { motion } from "framer-motion";
 
 const products = [
   {
@@ -40,9 +41,14 @@ const products = [
   },
 ]
 
-export default function Range() {
+export default function Range({startAnimation}) {
   return (
-    <div
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -78,7 +84,7 @@ export default function Range() {
       <div className="absolute -bottom-36 lg:-bottom-52 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight.png" alt="" className="drop-shadow-lg" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

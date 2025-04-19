@@ -2,10 +2,27 @@ import ChocolateSide from "../components/ChocolateSide/ChocolateSide";
 import Card from "../components/homepage/Favorite/Card";
 import NavigationIcon from "../components/NavigationIcon";
 import SearchInterface from "../components/Shop_Search";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
 
 export default function Shop() {
   return (
-    <div className="min-h-screen w-[100svw]">
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition} className="min-h-screen w-[100svw]">
       <div className="min-h-[60svh] page_container pt-[20vh] flex flex-col gap-8">
         <h3 className="globalHeaderFont w-full text-6xl text-center">
           Our Products
@@ -73,13 +90,17 @@ export default function Shop() {
         titleRed="Caramel "
         para="Discover the favorites that keep our customers coming back for more."
       />
-    </div>
+    </motion.div>
   );
 }
 
 function Main_Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
-    <div
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -142,13 +163,17 @@ Dates"
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
-    <div
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -205,13 +230,17 @@ Dates"
       <div className="absolute -top-20 right-0 w-0 md:w-28 lg:w-40 z-10">
         <img src="/images/nutsRight.png" alt="" className="drop-shadow-lg" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
-    <div
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -268,13 +297,17 @@ Dates"
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
-    <div
+    <motion.div
+    initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -331,6 +364,6 @@ Dates"
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />
       </div>
-    </div>
+    </motion.div>
   );
 }

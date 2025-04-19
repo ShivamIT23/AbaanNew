@@ -1,9 +1,15 @@
 import React from 'react'
 import ChocolateSide from '../ChocolateSide/ChocolateSide'
+import { motion } from 'framer-motion'
 
-export default function Instagram() {
+export default function Instagram({startAnimation}) {
   return (
-    <div
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -31,6 +37,6 @@ export default function Instagram() {
             <div className='absolute w-20 aspect-square bottom-0 -right-8 bg-[#683292] rounded-full hover:shadow-md hover:scale-125 transition'></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

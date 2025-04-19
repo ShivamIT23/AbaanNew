@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion"
 
-const Hero = () => {
+const Hero = ({startAnimation}) => {
   return (
-    <div className={`${styles.container} globalPadding`}>
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}} className={`${styles.container} globalPadding`}>
       <div className={styles.left}>
         <h2 className={`${styles.header} globalHeaderFont`}>
           Discover <span>Sweet</span> Delights!
@@ -45,7 +51,7 @@ const Hero = () => {
         className={styles.leftLayImage}
         alt=""
       />
-    </div>
+    </motion.div>
   );
 };
 

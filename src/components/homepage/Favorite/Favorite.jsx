@@ -1,10 +1,16 @@
 import React from "react";
 import ChocolateSide from "../../ChocolateSide/ChocolateSide";
 import Card from "./Card";
+import { motion } from "framer-motion";
 
-export default function Favorite() {
+export default function Favorite({startAnimation}) {
   return (
-    <div
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(315deg, #EFD7EF 8%, #F5F9FC 43%, #F8EAE1 64%, #EAF8F9 99%)`,
       }}
@@ -54,6 +60,6 @@ Dates"
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

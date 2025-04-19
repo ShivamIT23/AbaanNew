@@ -44,7 +44,7 @@ const peopleThoughts = [
   },
 ];
 
-export default function HeartPeople() {
+export default function HeartPeople({startAnimation}) {
   const [customerNumber, setCustomerNumber] = useState(1);
 
   useEffect(() => {
@@ -60,7 +60,12 @@ export default function HeartPeople() {
   };
 
   return (
-    <div
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}}
       style={{
         background: `linear-gradient(135deg,#EFD7EF 8%, #F5F9FC 40%, #F8EAE1 66%, #EAF8F9 91%)`,
       }}
@@ -176,6 +181,6 @@ export default function HeartPeople() {
           className="w-16 absolute top-[70%] right-[30%]"
         />
       </>
-    </div>
+    </motion.div>
   );
 }

@@ -16,7 +16,7 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-fit overflow-hidden">
       <motion.div
         ref={sliderRef}
         className="flex gap-8"
@@ -28,7 +28,7 @@ export default function ImageSlider() {
         {images.map((img, idx) => (
           <motion.div
             key={idx}
-            className="w-[47%] aspect-video p-4 shadow-md rounded-2xl shrink-0"
+            className="w-[47%] max-w-fit p-4 shadow-md rounded-2xl shrink-0"
             style={{
               background: "linear-gradient(135deg,#F8EAE1 0%, #EFD7EF 100%)",
             }}
@@ -36,7 +36,7 @@ export default function ImageSlider() {
             <img
               src={`/images/${img}.png`}
               alt={img}
-              className="rounded-2xl w-full h-full object-cover pointer-events-none"
+              className="rounded-2xl w-fit h-full object-contain pointer-events-none"
             />
           </motion.div>
         ))}

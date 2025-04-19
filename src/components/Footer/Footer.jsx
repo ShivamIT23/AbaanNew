@@ -2,6 +2,10 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Footer() {
+
+  const scrollToTop =()=>{
+    document.body.scrollTop = 0;
+  }
   return (
     <div className="relative bottom-0 h-fit md:h-[40vh] min-h-[40vh] md:min-h-fit bg-[#36196A] w-[100svw] text-[#CFB6E2] font-archivo ">
       <div className="flex flex-col md:flex-row gap-6 md:gap-0 h-fit bg-[#36196A] justify-evenly min-h-full items-center">
@@ -71,8 +75,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col xs:flex-row md:flex-col pb-10 gap-10">
-          <div className="flex gap-4 items-center justify-center">
+        <div className="flex flex-col xs:flex-row w-full md:w-auto justify-start md:flex-col pb-10 gap-10">
+          <div className="flex gap-4 items-center w-full justify-start pl-[4vw] md:justify-center">
             <img src="/images/phone.png" alt="location" className="w-10 h-10" />
             <div className="flex flex-col gap-2">
               <h3 className="text-white font-semibold text-lg">+1234567890</h3>
@@ -86,6 +90,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+        <img onClick={scrollToTop} src="/images/footerTop.png" alt="" className="w-12 absolute top-2/3 xs:top-1/3 md:top-2/3 -translate-y-1/2 right-[4vw] cursor-pointer hover:drop-shadow-lg z-[20]" />
       <div className="flex flex-col items-center w-full min-h-[5vh] h-fit gap-4">
         <div className="bg-[#CFB6E2] h-[1px] w-[70%]"></div>
         <h3 className="pb-6 text-sm">Copyright © INFLUCON DIGITALS</h3>

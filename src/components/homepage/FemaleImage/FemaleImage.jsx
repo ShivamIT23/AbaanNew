@@ -1,15 +1,20 @@
-import style from "./FemaleImage.module.css";
+import { motion } from "framer-motion";
 
-export default function FemaleImage() {
+export default function FemaleImage({startAnimation}) {
   return (
-    <div className="min-h-[50vh] h-fit w-[100svw] bg-white py-8">
+    <motion.div
+    key={startAnimation ? "start" : "stop"}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{once: true}} className="min-h-[50vh] h-fit w-[100svw] bg-white py-8">
       <div className="w-full flex justify-center relative">
         <img src="/images/dot1.png" alt="DOt Img" className="w-20" />
       </div>
       <div className="flex justify-between w-full h-fit min-h-full">
         <div className="flex justify-center px-[10vw] relative w-[50%] py-4">
           <div className="relative">
-            <div className={`${style.shineback} w-full h-full`}></div>
+            <div className=" shineback w-full h-full"></div>
             <img
               src="/images/cool-woman.png"
               alt=""
@@ -47,6 +52,6 @@ export default function FemaleImage() {
       <div className="flex justify-end pr-10 -mt-16">
         <img src="/images/halfCircle.png" alt="img4" className="w-32" />
       </div>
-    </div>
+    </motion.div>
   );
 }
