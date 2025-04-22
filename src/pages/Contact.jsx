@@ -29,7 +29,7 @@ export default function Contact() {
       viewport={{ once: true }}
       className="min-h-screen w-[100svw]"
     >
-      <section className="min-h-[60svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8">
+      <section className="min-h-[40svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8">
         <div className=" flex flex-col gap-8 h-fit">
           <h3 className="globalHeaderFont w-full text-7xl md:text-5xl lg:text-6xl xl:text-7xl text-center">
             Contact Us
@@ -61,7 +61,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="grid lg:grid-cols-3 w-full gap-y-8 h-fit pt-[10vh]">
-          <div className="col-span-2 lg:col-span-1 flex w-full flex-col xs:flex-row md:flex-col items-center justify-center xs:justify-between md:justify-center min-h-full h-fit gap-6">
+          <div className="col-span-2 lg:col-span-1 flex w-full flex-col xs:flex-row md:flex-col items-center justify-center xs:justify-between md:justify-center min-h-full h-fit gap-4 md:gap-6">
             {contactList.map((card, index) => {
               return (
                 <Card
@@ -157,7 +157,7 @@ export default function Contact() {
                 Submit Now
                 <img
                   src="/images/btnArrow.svg"
-                  className="btn-primary-img scale-75 group-hover:scale-100 transition"
+                  className="w-[3vw] max-w-[20px] scale-75 group-hover:scale-100 transition"
                   alt=""
                 />
               </button>
@@ -176,7 +176,7 @@ function Card({ img, title, para }) {
       style={{
         boxShadow: "0px 2px 73px 2px rgba(0, 0, 0, 0.05)",
       }}
-      className="flex box-border gap-6 px-[5%] bg-white py-[3%] w-full min-h-full md:min-h-[13vh] h-fit xs:h-auto md:h-fit items-center border-white border-[1px] rounded-[20px] overflow-y-hidden"
+      className="flex box-border gap-6 xs:gap-2 md:gap-6 px-[8%] xs:px-[1%] md:px-[5%] bg-white py-[3%] w-full min-h-full md:min-h-[13vh] h-fit xs:h-auto md:h-fit items-center border-white border-[1px] rounded-[20px] overflow-y-hidden"
     >
       <img
         src={img}
@@ -184,10 +184,10 @@ function Card({ img, title, para }) {
         className="w-6 md:w-12 h-6 md:h-12 rounded-full drop-shadow-md"
       />
       <div className="flex flex-col gap-2">
-        <h3 className="font-archivo font-bold text-xs md:text-lg text-[#0F0200]">
+        <h3 className="font-archivo font-bold text-lg xs:text-xs md:text-lg text-[#0F0200]">
           {title}
         </h3>
-        <p className="text-[#646464] w-[70%] text-[8px] md:text-sm">{para}</p>
+        <p className="text-[#646464] w-[70%] text-sm xs:text-[8px] md:text-sm">{para}</p>
       </div>
     </div>
   );

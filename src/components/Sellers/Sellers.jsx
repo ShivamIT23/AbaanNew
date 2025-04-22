@@ -1,6 +1,7 @@
 import React from "react";
-import Card from "../homepage/Favorite/Card";
 import { motion } from "framer-motion";
+import ProductComponent from "../ProductComponent/ProductComponent";
+import { productList2 } from "../../lib/ProductList";
 
 export default function Sellers({startAnimation}) {
   return (
@@ -21,36 +22,7 @@ export default function Sellers({startAnimation}) {
           Discover the favorites that keep our customers coming back for more.
           </p>
         </div>
-        <div className="flex gap-6 px-[4vw] py-[8vh] drop-shadow-sm">
-          <Card
-            imgSrc="/images/choco1.png"
-            bgColor="#F7F2F7"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco2.png"
-            bgColor="#FFEEEE"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco3.png"
-            bgColor="#F6F9E1"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco4.png"
-            bgColor="#FFFAF4"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-        </div>
+        <ProductComponent productList={productList2} />
       </div>
     </motion.div>
   );

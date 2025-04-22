@@ -24,25 +24,39 @@ const pageTransition = {
 };
 
 const Home = () => {
-
-  const [startAnimation,setStartAnimation] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   return (
-    <motion.div 
-    variants={pageVariants}
-    initial="initial"
-    animate="animate"
-    exit="exit"
-    transition={pageTransition}
-    onAnimationComplete={()=> setStartAnimation(true)} className="w-full bg-inherit md:bg-white">
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+      onAnimationComplete={() => setStartAnimation(true)}
+      className="w-full bg-inherit md:bg-white"
+    >
       <Hero startAnimation={startAnimation} />
-      <VideoSection startAnimation={startAnimation}  />
-      <FemaleImage startAnimation={startAnimation}  />
+      <VideoSection startAnimation={startAnimation} />
+      <FemaleImage startAnimation={startAnimation} />
       <Favorite startAnimation={startAnimation} />
-      <Banner imgSrc={"/images/banner.png"} startAnimation={startAnimation} />
+      <div className="relative hidden md:block w-fit h-fit">
+        <Banner imgSrc={"/images/banner.png"} startAnimation={startAnimation} />
+      </div>
       <Range startAnimation={startAnimation} />
       <Category startAnimation={startAnimation} />
-      <Banner imgSrc={"/images/banner2.png"} startAnimation={startAnimation} />
+      <div className="relative hidden md:block w-fit h-fit">
+        <Banner
+          imgSrc={"/images/banner2.png"}
+          startAnimation={startAnimation}
+        />
+      </div>
+      <div className="relative block md:hidden w-fit h-fit">
+        <Banner
+          imgSrc={"/images/mdBanner.png"}
+          startAnimation={startAnimation}
+        />
+      </div>
       <Sellers startAnimation={startAnimation} />
       <HeartPeople startAnimation={startAnimation} />
       <Arrival startAnimation={startAnimation} />

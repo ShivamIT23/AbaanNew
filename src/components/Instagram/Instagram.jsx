@@ -1,15 +1,15 @@
-import React from 'react'
-import ChocolateSide from '../ChocolateSide/ChocolateSide'
-import { motion } from 'framer-motion'
+import React from "react";
+import ChocolateSide from "../ChocolateSide/ChocolateSide";
+import { motion } from "framer-motion";
 
-export default function Instagram({startAnimation}) {
+export default function Instagram({ startAnimation }) {
   return (
     <motion.div
-    key={startAnimation ? "start" : "stop"}
+      key={startAnimation ? "start" : "stop"}
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -24,19 +24,61 @@ export default function Instagram({startAnimation}) {
             Follow Us on <span>Instagram </span>
           </h3>
           <p className="text-[#646464]">
-          Join our Instagram community for updates, special deals, and more!
+            Join our Instagram community for updates, special deals, and more!
           </p>
         </div>
-        <div className="grid grid-cols-5 gap-8 w-fit py-6 h-fit relative">
-            <img src="/images/insta1.png" alt="" className='col-span-1 relative z-[10] drop-shadow-sm' />
-            <img src="/images/insta2.png" alt="" className='col-span-1 relative z-[10] drop-shadow-sm' />
-            <img src="/images/insta3.png" alt="" className='col-span-1 relative z-[10] drop-shadow-sm' />
-            <img src="/images/insta4.png" alt="" className='col-span-1 relative z-[10] drop-shadow-sm' />
-            <img src="/images/insta5.png" alt="" className='col-span-1 relative z-[10] drop-shadow-sm' />
-            <div className='absolute w-20 aspect-square top-0 -left-6 bg-[#EC1D23] rounded-full hover:shadow-md hover:scale-125 transition'></div>
-            <div className='absolute w-20 aspect-square bottom-0 -right-8 bg-[#683292] rounded-full hover:shadow-md hover:scale-125 transition'></div>
+        <div className="grid lg:hidden grid-cols-1 shadow-component sm:grid-cols-2 gap-6 px-[4vw] py-[4vh] mb-[6vh] bg-[#F8F4F1] rounded-3xl">
+          <img
+            src="/images/insta1.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta2.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta3.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta4.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+        </div>
+        <div className="hidden lg:grid grid-cols-5 gap-8 w-fit py-6 h-fit relative">
+          <img
+            src="/images/insta1.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta2.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta3.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta4.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <img
+            src="/images/insta5.png"
+            alt=""
+            className="col-span-1 relative z-[10] drop-shadow-sm"
+          />
+          <div className="absolute w-20 aspect-square top-0 -left-6 bg-[#EC1D23] rounded-full hover:shadow-md hover:scale-125 transition"></div>
+          <div className="absolute w-20 aspect-square bottom-0 -right-8 bg-[#683292] rounded-full hover:shadow-md hover:scale-125 transition"></div>
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

@@ -14,7 +14,7 @@
   }
 
   .btn-primary-img {
-    @apply w-[1.1vw];
+    @apply w-[1.4vw];
   }
 }
 
@@ -49,6 +49,13 @@ html {
       #f8eae1 75%,
       #eaf8f9 100%
     );
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .shadow-component{
+    box-shadow: 0px 4px 16px 0px #F83D8E;
   }
 }
 
@@ -88,3 +95,5 @@ html {
   bottom: 50%;
   border-radius: 546px;
   }
+
+

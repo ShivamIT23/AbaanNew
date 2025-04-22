@@ -12,7 +12,7 @@ export default function VideoSection({startAnimation}) {
         <h2 className="globalHeaderFont text-4xl sm:text-5xl md:text-6xl text-center">
           <span>Kunafa </span>Chocolates!
         </h2>
-        <p className="text-[#646464] text-center px-[10vw] sm:px-[30vw]">
+        <p className="text-[#646464] text-center px-[10vw] md:px-[20vw]">
           Kunafa Chocolates by Abaan Chocolates (Dubai) combine crispy Middle
           Eastern kunafa layers with smooth premium chocolate, offering a
           luxurious, irresistible treat that balances crunch and velvety
@@ -45,11 +45,11 @@ export default function VideoSection({startAnimation}) {
         </div>
       </div>
         <div className="flex ">
-        <button className="btn-primary px-4 min-h-8 flex items-center">
+        <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
             Explore Our Menu
             <img
               src="/images/btnArrow.svg"
-              className="btn-primary-img"
+              className="w-[3vw] max-w-[20px]"
               alt=""
             />
           </button>

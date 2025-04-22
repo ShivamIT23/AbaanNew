@@ -38,7 +38,7 @@ export default function Footer() {
               <li className="list-none">
                 <ul className="flex flex-col gap-3 list-disc marker:text-[#EC1D23] pl-4">
                   <li>
-                    <NavLink to="/products" link="Products" />
+                    <NavLink to="/cart" link="Cart" />
                   </li>
                   <li>
                     <NavLink to="/blog" link="Blog" />

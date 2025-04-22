@@ -16,6 +16,8 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Product from "./pages/Product";
 import ScrollToTop from "./components/ScrollToTop";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -25,9 +27,10 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/shop/*" element={<Product />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>

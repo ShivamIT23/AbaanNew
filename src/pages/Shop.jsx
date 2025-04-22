@@ -1,8 +1,9 @@
 import ChocolateSide from "../components/ChocolateSide/ChocolateSide";
-import Card from "../components/homepage/Favorite/Card";
 import NavigationIcon from "../components/NavigationIcon";
+import ProductComponent from "../components/ProductComponent/ProductComponent";
 import SearchInterface from "../components/Shop_Search";
 import { motion } from "framer-motion";
+import { productList1, productList2, productList3 } from "../lib/ProductList";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -22,7 +23,9 @@ export default function Shop() {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={pageTransition} className="min-h-screen w-[100svw]">
+      transition={pageTransition}
+      className="min-h-screen w-[100svw]"
+    >
       <div className="min-h-[60svh] page_container pt-[20vh] flex flex-col gap-8">
         <h3 className="globalHeaderFont w-full text-6xl text-center">
           Our Products
@@ -49,12 +52,12 @@ export default function Shop() {
         titleEnd="Services"
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section
+      <Section2
         titleRed="New "
         titleEnd="Arrivals"
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section2
+      <Section
         titleRed="Eclairs "
         para="Discover the favorites that keep our customers coming back for more."
       />
@@ -66,7 +69,7 @@ export default function Shop() {
         titleRed="Lollipop "
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section2
+      <Section
         titleRed="Candy "
         para="Discover the favorites that keep our customers coming back for more."
       />
@@ -74,11 +77,11 @@ export default function Shop() {
         titleRed="Dates Chocolate "
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section2
+      <Section3
         titleRed="Truffles "
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section2
+      <Section
         titleRed="Mould Chocolate "
         para="Discover the favorites that keep our customers coming back for more."
       />
@@ -86,7 +89,7 @@ export default function Shop() {
         titleRed="Kunafa Dubai Chocolates "
         para="Discover the favorites that keep our customers coming back for more."
       />
-      <Section2
+      <Section3
         titleRed="Caramel "
         para="Discover the favorites that keep our customers coming back for more."
       />
@@ -97,10 +100,10 @@ export default function Shop() {
 function Main_Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
     <motion.div
-    initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -128,40 +131,7 @@ function Main_Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
           </h3>
           <p className="text-[#646464]">{para}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-[4vw] py-[8vh]">
-          <Card
-            imgSrc="/images/choco1.png"
-            bgColor="#F7F2F7"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco2.png"
-            bgColor="#FFEEEE"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco3.png"
-              bgColor="#F6F9E1"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco4.png"
-              bgColor="#FFFAF4"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-        </div>
+        <ProductComponent productList={productList1} />
       </div>
     </motion.div>
   );
@@ -170,10 +140,10 @@ Dates"
 function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
     <motion.div
-    initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -192,40 +162,7 @@ function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
           </h3>
           <p className="text-[#646464]">{para}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-[4vw] py-[8vh]">
-          <Card
-            imgSrc="/images/choco1.png"
-            bgColor="#F7F2F7"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco2.png"
-            bgColor="#FFEEEE"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco3.png"
-              bgColor="#F6F9E1"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco4.png"
-              bgColor="#FFFAF4"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-        </div>
+        <ProductComponent productList={productList2} />
       </div>
       <div className="absolute -top-20 right-0 w-0 md:w-28 lg:w-40 z-10">
         <img src="/images/nutsRight.png" alt="" className="drop-shadow-lg" />
@@ -237,10 +174,10 @@ Dates"
 function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
     <motion.div
-    initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -259,40 +196,7 @@ function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
           </h3>
           <p className="text-[#646464]">{para}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-[4vw] py-[8vh]">
-          <Card
-            imgSrc="/images/choco1.png"
-            bgColor="#F7F2F7"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco2.png"
-            bgColor="#FFEEEE"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco3.png"
-              bgColor="#F6F9E1"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco4.png"
-              bgColor="#FFFAF4"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-        </div>
+        <ProductComponent productList={productList3} />
       </div>
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />
@@ -304,10 +208,10 @@ Dates"
 function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
   return (
     <motion.div
-    initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
@@ -326,40 +230,7 @@ function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
           </h3>
           <p className="text-[#646464]">{para}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-[4vw] py-[8vh]">
-          <Card
-            imgSrc="/images/choco1.png"
-            bgColor="#F7F2F7"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <Card
-            imgSrc="/images/choco2.png"
-            bgColor="#FFEEEE"
-            title="Assorted Chocolate
-Dates"
-            para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-          />
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco3.png"
-              bgColor="#F6F9E1"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-          <div className="hidden md:block">
-            <Card
-              imgSrc="/images/choco4.png"
-              bgColor="#FFFAF4"
-              title="Assorted Chocolate
-Dates"
-              para="A delightful mix of assorted chocolate-covered dates, each filled with creamy goodness."
-            />
-          </div>
-        </div>
+        <ProductComponent productList={productList1} />
       </div>
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
         <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />

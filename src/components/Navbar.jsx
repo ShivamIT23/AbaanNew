@@ -67,11 +67,11 @@ const Navbar = () => {
             </h3>
           </div>
 
-          <button className="btn-primary p-4 ">
+          <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
             Contact us{" "}
             <img
               src="/images/btnArrow.svg"
-              className="btn-primary-img"
+              className="w-[3vw] max-w-[20px]"
               alt=""
             />
           </button>

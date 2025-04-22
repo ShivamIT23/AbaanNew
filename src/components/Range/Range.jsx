@@ -1,45 +1,7 @@
 import React from "react";
 import ChocolateSide from "../ChocolateSide/ChocolateSide";
 import { motion } from "framer-motion";
-
-const products = [
-  {
-    name:"Chocolate Eclairs",
-    imgSrc:"/images/range1.png"
-  },
-  {
-    name:"Coffee Eclairs",
-    imgSrc:"/images/range2.png"
-  },
-  {
-    name:"Honey Eclairs",
-    imgSrc:"/images/range3.png"
-  },
-  {
-    name:"Kofy Candy",
-    imgSrc:"/images/range4.png"
-  },
-  {
-    name:"Milk Eclairs",
-    imgSrc:"/images/range5.png"
-  },
-  {
-    name:"Mint candy",
-    imgSrc:"/images/range6.png"
-  },
-  {
-    name:"Strawberry candy",
-    imgSrc:"/images/range7.png"
-  },
-  {
-    name:"Peanut Eclairs",
-    imgSrc:"/images/range8.png"
-  },
-  {
-    name:"Selection Eclairs",
-    imgSrc:"/images/range9.png"
-  },
-]
+import { products } from "../../lib/ProductList";
 
 export default function Range({startAnimation}) {
   return (
@@ -52,7 +14,7 @@ export default function Range({startAnimation}) {
       style={{
         background: `linear-gradient(135deg,#EAF8F9 8%, #F8EAE1 43%, #F5F9FC 64%, #EFD7EF 99%)`,
       }}
-      className="min-h-[100svh] h-fit relative w-[100svw]"
+      className="min-h-[100svh] hidden md:block h-fit relative w-[100svw]"
     >
       <div className="absolute -top-20 lg:-top-36 left-0 w-0 md:w-36 lg:w-60 z-[10]">
         <ChocolateSide />
