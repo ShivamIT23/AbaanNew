@@ -9,6 +9,7 @@ const Navbar = () => {
       <div className="relative w-full flex justify-between items-center p-2">
         <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
           <img
+            loading="lazy"
             src="/images/logo.png"
             className="mix-blend-screen max-w-[20vw] xs:w-[15vw] sm:w-[13vw] md:w-[7vw] lg:w-[6vw] "
             alt=""
@@ -19,7 +20,10 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex justify-center items-center gap-4 lg:gap-10">
-          <Link to="/" className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link
+            to="/"
+            className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]"
+          >
             Home
             <div
               className="w-0 h-0 
@@ -32,7 +36,10 @@ const Navbar = () => {
             ></div>
           </Link>
 
-          <Link to="/shop" className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link
+            to="/shop"
+            className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]"
+          >
             Shop
             <div
               className="w-0 h-0 
@@ -42,11 +49,17 @@ const Navbar = () => {
             ></div>
           </Link>
 
-          <Link to="/about" className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link
+            to="/about"
+            className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]"
+          >
             About us
           </Link>
 
-          <Link to="/contact" className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link
+            to="/contact"
+            className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]"
+          >
             Contact us
           </Link>
         </div>
@@ -58,6 +71,7 @@ const Navbar = () => {
 
           <div className="relative">
             <img
+            loading="lazy"
               src="/images/cart.png"
               className="w-[2vw] lgmd:w-[1.6vw]"
               alt=""
@@ -70,6 +84,7 @@ const Navbar = () => {
           <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
             Contact us{" "}
             <img
+            loading="lazy"
               src="/images/btnArrow.svg"
               className="w-[3vw] max-w-[20px]"
               alt=""

@@ -27,6 +27,7 @@ const Hambutton = () => {
           <div className="flex flex-col h-full w-full py-[20vh] justify-start items-center gap-[6vh]">
             <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
               <img
+                loading="lazy"
                 src="/images/logo.png"
                 className="mix-blend-screen w-[80vw]  "
                 alt=""

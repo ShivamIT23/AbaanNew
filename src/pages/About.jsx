@@ -67,6 +67,7 @@ export default function About() {
         </div>
 
         <img
+        loading="lazy"
           src="/images/topPattern.png"
           alt="design top"
           className=" rotate-180 hidden md:block h-[10svh] w-full"
@@ -204,25 +205,29 @@ export default function About() {
           </h3>
         </div>
         <div className="w-full flex justify-center items-center h-fit py-[3vh]">
-          <img src="/images/Available.png" alt="" className="w-[60%]" />
+          <img loading="lazy" src="/images/Available.png" alt="" className="w-[60%]" />
         </div>
         <div className="w-full flex gap-6 justify-center items-center h-fit py-[6vh]">
           <img
+          loading="lazy"
             src="/images/about_bottom1.png"
             alt=""
             className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
           />
           <img
+          loading="lazy"
             src="/images/about_bottom2.png"
             alt=""
             className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
           />
           <img
+          loading="lazy"
             src="/images/about_bottom3.png"
             alt=""
             className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
           />
           <img
+          loading="lazy"
             src="/images/about_bottom4.png"
             alt=""
             className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
@@ -262,11 +267,13 @@ function ImageSection() {
             promises an exceptional experience with every bite of our exquisite
             chocolates and desserts.
             <img
+            loading="lazy"
               src="/images/triangle2.png"
               alt="triangle"
               className="absolute bottom-2/3 translate-y-1/2 -right-20 w-10"
             />
             <img
+            loading="lazy"
               src="/images/dot2.png"
               alt="Dot Img"
               className="w-20 absolute -bottom-6 -right-6"
@@ -286,7 +293,7 @@ function ImageSection() {
         <div className="flex justify-center px-[5vw] relative w-full md:w-[80%] lg:w-[40%] py-4">
           <div className="relative">
             <div className=" shineback_About w-full h-full"></div>
-            <img src="/images/about1.png" alt="" className="relative z-20" />
+            <img loading="lazy" src="/images/about1.png" alt="" className="relative z-20" />
           </div>
         </div>
         <div className="flex flex-col items-center lg:items-start lg:pt-[10vh] gap-8 relative max-h-fit justify-center w-[80%] lg:w-[50%] md:pr-[12vw] py-4">
@@ -308,11 +315,13 @@ function ImageSection() {
               Abaan promises an exceptional experience with every bite of our
               exquisite chocolates and desserts.
               <img
+              loading="lazy"
                 src="/images/triangle2.png"
                 alt="triangle"
                 className="absolute bottom-2/3 translate-y-1/2 -right-20 w-10"
               />
               <img
+              loading="lazy"
                 src="/images/dot2.png"
                 alt="Dot Img"
                 className="w-20 absolute -bottom-6 -right-6"
@@ -333,6 +342,7 @@ function ImageSection() {
             <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
               Explore Our Menu
               <img
+              loading="lazy"
                 src="/images/btnArrow.svg"
                 className="w-[3vw] max-w-[20px]"
                 alt=""
@@ -356,8 +366,9 @@ function Banner() {
         viewport={{ once: true }}
         className="relative hidden md:block w-full h-fit"
       >
-        <img src="/images/about_banner1.png" alt="" />
+        <img loading="lazy" src="/images/about_banner1.png" alt="" />
         <img
+        loading="lazy"
           src="/images/about_banner2.png"
           alt=""
           className="absolute z-10 right-0 h-[100%] bottom-0"
@@ -370,7 +381,7 @@ function Banner() {
         viewport={{ once: true }}
         className="relative block md:hidden w-full h-fit"
       >
-        <img src="/images/about_banner3.png" alt="" />
+        <img loading="lazy" src="/images/about_banner3.png" alt="" />
       </motion.div>
     </>
   );
@@ -399,6 +410,7 @@ function Countries({ country }) {
   return (
     <div className="flex gap-2">
       <img
+      loading="lazy"
         src="/images/location_about.png"
         alt=""
         className="drop-shadow-md w-8"

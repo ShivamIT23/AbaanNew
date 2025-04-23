@@ -112,6 +112,7 @@ export default function Product() {
                 <div className="w-[30%] lg:w-[20%] hidden md:flex flex-col items-center gap-6 my-auto">
                   {[1, 2, 3, 4].map((num, idx) => (
                     <img
+                    loading="lazy"
                       onClick={() => setInView(idx)}
                       key={idx}
                       src={product.img}
@@ -130,6 +131,7 @@ export default function Product() {
                 {/* Main preview */}
                 <div className="md:w-[70%] lg:w-[80%] rounded-xl flex justify-center items-center bg-[#FFFAF4] md:drop-shadow-md drop-shadow-xl">
                   <img
+                  loading="lazy"
                     src={product.img}
                     alt="Main Chocolate"
                     className="w-full object-cover"
@@ -141,6 +143,7 @@ export default function Product() {
               <div className="w-full flex md:hidden drop-shadow-lg items-center gap-6 my-auto">
                 {[1, 2, 3, 4].map((num, idx) => (
                   <img
+                  loading="lazy"
                     onClick={() => setInView(idx)}
                     key={idx}
                     src={product.img}
@@ -216,6 +219,7 @@ export default function Product() {
                     >
                       Add to Cart
                       <img
+                      loading="lazy"
                         src="/images/btnArrow.svg"
                         className="w-[3vw] max-w-[20px]"
                         alt=""
@@ -299,6 +303,7 @@ export default function Product() {
             </AnimatePresence>
           </section>
           <img
+          loading="lazy"
             src="/images/topPattern.png"
             alt="design top"
             className=" rotate-180 hidden md:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"

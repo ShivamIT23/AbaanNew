@@ -205,6 +205,7 @@ export default function Checkout() {
                     <button className="btn-primary w-full justify-center px-4 gap-2 min-h-8 py-3 flex items-center text-lg">
                       Place Order Now
                       <img
+                      loading="lazy"
                         src="/images/btnArrow.svg"
                         className="w-[3vw] max-w-[20px]"
                         alt=""
@@ -217,6 +218,7 @@ export default function Checkout() {
             </div>
           </section>
           <img
+          loading="lazy"
             src="/images/topPattern.png"
             alt="design top"
             className=" rotate-180 hidden lg:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"
@@ -261,7 +263,7 @@ function ItemPreview() {
               </h3>
               <div className="flex gap-3 w-full">
                 <h3 className="w-[20%] flex justify-start">
-                  <img src={item.image} alt="" className="w-full" />
+                  <img loading="lazy" src={item.image} alt="" className="w-full" />
                 </h3>
                 <h3 className="text-[#683292] font-bold text-[16px] w-[50%] flex justify-end items-center">
                   <p>Total Price: </p>

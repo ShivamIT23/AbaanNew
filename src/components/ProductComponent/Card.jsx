@@ -35,6 +35,7 @@ export default function Card({
     >
       <div className="flex justify-center items-center relative">
         <img
+        loading="lazy"
           src={imgSrc}
           alt="chocolate_img"
           style={{ backgroundColor: `${bgColor}` }}
@@ -46,7 +47,7 @@ export default function Card({
             like ? "bg-yellow-500" : "bg-white"
           }`}
         >
-          <img src="/images/heart.png" alt="heart" />
+          <img loading="lazy" src="/images/heart.png" alt="heart" />
         </button>
       </div>
       <div className="w-[99%] flex font-bold text-[#0F0200] px-2">
@@ -65,6 +66,7 @@ export default function Card({
           className="bg-[#683292] group p-[10px] rounded-full w-10"
         >
           <img
+          loading="lazy"
             src="/images/cartBox.png"
             alt="cart"
             className="origin-center group-hover:scale-x-[-1] transition hover:drop-shadow-md"

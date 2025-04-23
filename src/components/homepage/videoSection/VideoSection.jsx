@@ -21,14 +21,14 @@ export default function VideoSection({startAnimation}) {
       </div>
       <div className="relative h-fit w-full flex justify-center py-10">
         <div className="absolute inset-0 w-[76vw] left-1/2 -translate-x-1/2 h-full hidden md:flex justify-center items-center">
-          <img className="w-[100%] h-[110%]" src="/images/videoBack.png" />
+          <img loading="lazy" className="w-[100%] h-[110%]" src="/images/videoBack.png" />
           <div className="absolute z-10 w-[95%] h-full">
             {/* Splashes */}
-            <img
+            <img loading="lazy"
               src="/images/splashLeft.png"
               className="absolute -left-10 md:-left-28 lg:-left-32 top-1/2 -translate-y-1/2 w-32 sm:w-52 z-10"
             />
-            <img
+            <img loading="lazy"
               src="/images/splashRight.png"
               className="absolute -right-10 md:-right-24 lg:-right-32 top-2/3 -translate-y-1/2 w-32 sm:w-52 z-10"
             />
@@ -47,7 +47,7 @@ export default function VideoSection({startAnimation}) {
         <div className="flex ">
         <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
             Explore Our Menu
-            <img
+            <img loading="lazy"
               src="/images/btnArrow.svg"
               className="w-[3vw] max-w-[20px]"
               alt=""

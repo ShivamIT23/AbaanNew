@@ -12,6 +12,7 @@ export default function Footer() {
         <div className="h-[60%] flex pt-10 md:pt-0 items-start">
           <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
             <img
+            loading="lazy"
               src="/images/logo.png"
               className="mix-blend-screen max-w-[20vw] xs:w-[15vw] sm:w-[13vw] md:w-[7vw] lgmd:w-[6vw] "
               alt=""
@@ -53,6 +54,7 @@ export default function Footer() {
           <div className="flex flex-col gap-10">
             <div className="flex gap-4 items-center">
               <img
+              loading="lazy"
                 src="/images/location.png"
                 alt="location"
                 className="w-10 h-10"
@@ -64,6 +66,7 @@ export default function Footer() {
             </div>
             <div className="flex gap-4 items-center">
               <img
+              loading="lazy"
                 src="/images/email.png"
                 alt="location"
                 className="w-10 h-10"
@@ -77,20 +80,20 @@ export default function Footer() {
         </div>
         <div className="flex flex-col xs:flex-row w-full md:w-auto justify-start md:flex-col pb-10 gap-10">
           <div className="flex gap-4 items-center w-full justify-start pl-[4vw] md:justify-center">
-            <img src="/images/phone.png" alt="location" className="w-10 h-10" />
+            <img loading="lazy" src="/images/phone.png" alt="location" className="w-10 h-10" />
             <div className="flex flex-col gap-2">
               <h3 className="text-white font-semibold text-lg">+1234567890</h3>
               <p>Got Questions? Call us 24/7</p>
             </div>
           </div>
           <div className="flex gap-4 items-center justify-center">
-            <img src="/images/email.png" alt="location" className="w-10 h-10" />
-            <img src="/images/email.png" alt="location" className="w-10 h-10" />
-            <img src="/images/email.png" alt="location" className="w-10 h-10" />
+            <img loading="lazy" src="/images/email.png" alt="location" className="w-10 h-10" />
+            <img loading="lazy" src="/images/email.png" alt="location" className="w-10 h-10" />
+            <img loading="lazy" src="/images/email.png" alt="location" className="w-10 h-10" />
           </div>
         </div>
       </div>
-        <img onClick={scrollToTop} src="/images/footerTop.png" alt="" className="w-12 absolute top-2/3 xs:top-1/3 md:top-2/3 -translate-y-1/2 right-[4vw] cursor-pointer hover:drop-shadow-lg z-[20]" />
+        <img loading="lazy" onClick={scrollToTop} src="/images/footerTop.png" alt="" className="w-12 absolute top-2/3 xs:top-1/3 md:top-2/3 -translate-y-1/2 right-[4vw] cursor-pointer hover:drop-shadow-lg z-[20]" />
       <div className="flex flex-col items-center w-full min-h-[5vh] h-fit gap-4">
         <div className="bg-[#CFB6E2] h-[1px] w-[70%]"></div>
         <h3 className="pb-6 text-sm">Copyright © INFLUCON DIGITALS</h3>

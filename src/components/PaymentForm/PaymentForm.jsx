@@ -19,7 +19,7 @@ export default function PaymentForm() {
           />
           <span className="font-medium">Credit card</span>
           <span className="ml-auto flex gap-2">
-            <img src="/images/cardImg.png" alt="Visa" className="w-16 h-4" />
+            <img loading="lazy" src="/images/cardImg.png" alt="Visa" className="w-16 h-4" />
           </span>
         </label>
       </div>

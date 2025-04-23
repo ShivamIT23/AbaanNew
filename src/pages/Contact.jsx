@@ -58,6 +58,7 @@ export default function Contact() {
         </div>
 
         <img
+        loading="lazy"
           src="/images/topPattern.png"
           alt="design top"
           className=" rotate-180 h-[10svh] hidden md:block w-full"
@@ -168,6 +169,7 @@ export default function Contact() {
               >
                 Submit Now
                 <img
+                loading="lazy"
                   src="/images/btnArrow.svg"
                   className="w-[3vw] max-w-[20px] scale-75 group-hover:scale-100 transition"
                   alt=""
@@ -191,6 +193,7 @@ function Card({ img, title, para }) {
       className="flex box-border gap-6 xs:gap-2 md:gap-6 px-[8%] xs:px-[1%] md:px-[5%] bg-white py-[3%] w-full min-h-full md:min-h-[13vh] h-fit xs:h-auto md:h-fit items-center border-white border-[1px] rounded-[20px] overflow-y-hidden"
     >
       <img
+      loading="lazy"
         src={img}
         alt=""
         className="w-6 md:w-12 h-6 md:h-12 rounded-full drop-shadow-md"

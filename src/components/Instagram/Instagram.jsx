@@ -29,21 +29,25 @@ export default function Instagram({ startAnimation }) {
         </div>
         <div className="grid lg:hidden grid-cols-1 shadow-component sm:grid-cols-2 gap-6 px-[4vw] py-[4vh] mb-[6vh] bg-[#F8F4F1] rounded-3xl">
           <img
+          loading="lazy"
             src="/images/insta1.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta2.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta3.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta4.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
@@ -51,26 +55,31 @@ export default function Instagram({ startAnimation }) {
         </div>
         <div className="hidden lg:grid grid-cols-5 gap-8 w-fit py-6 h-fit relative">
           <img
+          loading="lazy"
             src="/images/insta1.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta2.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta3.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta4.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"
           />
           <img
+          loading="lazy"
             src="/images/insta5.png"
             alt=""
             className="col-span-1 relative z-[10] drop-shadow-sm"

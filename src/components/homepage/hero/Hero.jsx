@@ -22,18 +22,21 @@ const Hero = ({startAnimation}) => {
 
         <button className={`${styles.btn} ${styles.btnD}`}>
           Browse Our Classic Flavors{" "}
-          <img src="/images/btnArrow.svg" className={styles.btnArw} alt="" />
+          <img
+          loading="lazy" src="/images/btnArrow.svg" className={styles.btnArw} alt="" />
         </button>
       </div>
 
       <div className={styles.right}>
         <img
+        loading="lazy"
           src="/images/homepage/bgChoco.svg"
           className={styles.rtLayout}
           alt=""
         />
 
         <img
+        loading="lazy"
           src="/images/homepage/heroImage.png"
           className={styles.heroImage}
           alt=""
@@ -43,10 +46,12 @@ const Hero = ({startAnimation}) => {
       <div className={styles.btnWrapper}>
         <Link className={`${styles.btn} ${styles.btnM}`}>
           Browse Our Classic Flavors{" "}
-          <img src="/images/btnArrow.svg" className={styles.btnArw} alt="" />
+          <img
+          loading="lazy" src="/images/btnArrow.svg" className={styles.btnArw} alt="" />
         </Link>
       </div>
       <img
+      loading="lazy"
         src="/images/homepage/heroLayout.jpg"
         className={styles.leftLayImage}
         alt=""

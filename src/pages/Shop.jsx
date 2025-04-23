@@ -117,6 +117,7 @@ function Main_Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       </div>
       <div className="w-[100svw] max-h-fit relative">
         <img
+          loading="lazy"
           src="/images/topPattern.png"
           alt="design top"
           className="min-h-[150px] h-full"
@@ -155,7 +156,12 @@ function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       <div className="absolute -top-20 lg:-top-44 left-0 w-0 md:w-36 lg:w-60 ">
         <ChocolateLeft />
       </div>
-      <img src="/images/topPattern.png" alt="design top" className="" />
+      <img
+        loading="lazy"
+        src="/images/topPattern.png"
+        alt="design top"
+        className=""
+      />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
         <div className=" flex flex-col gap-6 items-center max-h-fit relative">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl pt-4">
@@ -189,7 +195,12 @@ function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       <div className="absolute -top-20 left-0 w-0 md:w-28 lg:w-40 z-10">
         <NutsLeft />
       </div>
-      <img src="/images/topPattern.png" alt="design top" className="" />
+      <img
+        loading="lazy"
+        src="/images/topPattern.png"
+        alt="design top"
+        className=""
+      />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
         <div className=" flex flex-col gap-6 items-center max-h-fit relative">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl pt-4">
@@ -223,7 +234,12 @@ function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       <div className="absolute -top-20 lg:-top-44 left-0 w-0 md:w-36 lg:w-60 ">
         <ChocolateLeft />
       </div>
-      <img src="/images/topPattern.png" alt="design top" className="" />
+      <img
+        loading="lazy"
+        src="/images/topPattern.png"
+        alt="design top"
+        className=""
+      />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
         <div className=" flex flex-col gap-6 items-center max-h-fit relative">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl pt-4">

@@ -73,6 +73,7 @@ export default function HeartPeople({startAnimation}) {
     >
       <div className="flex flex-col w-[50%] min-h-[50vh] h-fit relative justify-between items-center">
         <img
+        loading="lazy"
           src="/images/quotes1.png"
           alt=""
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%]"
@@ -141,41 +142,49 @@ export default function HeartPeople({startAnimation}) {
       {/* Decorative people images */}
       <>
         <img
+        loading="lazy"
           src="/images/person1.png"
           alt=""
           className="w-16 absolute top-[30%] left-[15%]"
         />
         <img
+        loading="lazy"
           src="/images/person2.png"
           alt=""
           className="w-16 absolute top-[60%] left-[18%]"
         />
         <img
+        loading="lazy"
           src="/images/person3.png"
           alt=""
           className="w-16 absolute top-[40%] left-[25%]"
         />
         <img
+        loading="lazy"
           src="/images/person4.png"
           alt=""
           className="w-16 absolute top-[70%] left-[30%]"
         />
         <img
+        loading="lazy"
           src="/images/person5.png"
           alt=""
           className="w-16 absolute top-[30%] right-[15%]"
         />
         <img
+        loading="lazy"
           src="/images/person6.png"
           alt=""
           className="w-16 absolute top-[60%] right-[18%]"
         />
         <img
+        loading="lazy"
           src="/images/person7.png"
           alt=""
           className="w-16 absolute top-[40%] right-[25%]"
         />
         <img
+        loading="lazy"
           src="/images/person8.png"
           alt=""
           className="w-16 absolute top-[70%] right-[30%]"

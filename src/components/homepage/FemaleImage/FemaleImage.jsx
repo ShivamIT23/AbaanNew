@@ -11,7 +11,7 @@ export default function FemaleImage({ startAnimation }) {
       className="min-h-[50vh] h-fit w-[100svw] md:bg-white py-8"
     >
       <div className="w-full flex justify-center relative">
-        <img src="/images/dot1.png" alt="DOt Img" className="w-20" />
+        <img loading="lazy" src="/images/dot1.png" alt="DOt Img" className="w-20" />
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between w-full h-fit min-h-full">
         <div className="flex flex-col gap-6 md:flex-row justify-center md:px-[10vw] relative w-full md:w-[50%] py-4">
@@ -21,6 +21,7 @@ export default function FemaleImage({ startAnimation }) {
 
             {/* Woman image */}
             <img
+            loading="lazy"
               src="/images/cool-woman.png"
               alt=""
               className="relative z-20 md:px-0"
@@ -28,12 +29,14 @@ export default function FemaleImage({ startAnimation }) {
 
             {/* Full-width bottom pattern image */}
             <img
+            loading="lazy"
               src="/images/topPattern.png"
               alt="design top"
               className="absolute bottom-0 rotate-180 w-[100vw] min-h-[60px] z-40 left-0"
             />
           </div>
           <img
+          loading="lazy"
             src="/images/triangle1.png"
             alt="triangle"
             className="block md:hidden absolute top-10 right-10 w-14"
