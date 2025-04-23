@@ -1,9 +1,12 @@
-import ChocolateSide from "../components/ChocolateSide/ChocolateSide";
 import NavigationIcon from "../components/NavigationIcon";
 import ProductComponent from "../components/ProductComponent/ProductComponent";
 import SearchInterface from "../components/Shop_Search";
 import { motion } from "framer-motion";
 import { productList1, productList2, productList3 } from "../lib/ProductList";
+import NutsRight from "../components/absoluteImages/NutsRight";
+import NutsLeft from "../components/absoluteImages/NutsLeft";
+import ChocolateRight from "../components/absoluteImages/ChocolateRight";
+import ChocolateLeft from "../components/absoluteImages/ChocolateLeft";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -110,7 +113,7 @@ function Main_Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       className="min-h-[100svh] h-fit relative w-[100svw]"
     >
       <div className="absolute top-0 left-0 w-0 md:w-36 lg:w-60 z-[10]">
-        <ChocolateSide />
+        <ChocolateLeft />
       </div>
       <div className="w-[100svw] max-h-fit relative">
         <img
@@ -150,7 +153,7 @@ function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       className="min-h-[100svh] h-fit relative w-[100svw]"
     >
       <div className="absolute -top-20 lg:-top-44 left-0 w-0 md:w-36 lg:w-60 ">
-        <ChocolateSide />
+        <ChocolateLeft />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="" />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
@@ -165,7 +168,7 @@ function Section({ titleStart = "", titleRed = "", titleEnd = "", para }) {
         <ProductComponent productList={productList2} />
       </div>
       <div className="absolute -top-20 right-0 w-0 md:w-28 lg:w-40 z-10">
-        <img src="/images/nutsRight.png" alt="" className="drop-shadow-lg" />
+        <NutsRight />
       </div>
     </motion.div>
   );
@@ -184,7 +187,7 @@ function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       className="min-h-[100svh] h-fit relative w-[100svw]"
     >
       <div className="absolute -top-20 left-0 w-0 md:w-28 lg:w-40 z-10">
-        <img src="/images/nuts.png" alt="" className="drop-shadow-lg" />
+        <NutsLeft />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="" />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
@@ -199,7 +202,7 @@ function Section2({ titleStart = "", titleRed = "", titleEnd = "", para }) {
         <ProductComponent productList={productList3} />
       </div>
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
-        <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />
+        <ChocolateRight />
       </div>
     </motion.div>
   );
@@ -218,7 +221,7 @@ function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
       className="min-h-[100svh] h-fit relative w-[100svw]"
     >
       <div className="absolute -top-20 lg:-top-44 left-0 w-0 md:w-36 lg:w-60 ">
-        <ChocolateSide />
+        <ChocolateLeft />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="" />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
@@ -233,7 +236,7 @@ function Section3({ titleStart = "", titleRed = "", titleEnd = "", para }) {
         <ProductComponent productList={productList1} />
       </div>
       <div className="absolute -top-40 lg:-top-56 right-0 w-0 md:w-36 lg:w-60 z-10">
-        <img src="/images/SideRight2.png" alt="" className="drop-shadow-lg" />
+        <ChocolateRight />
       </div>
     </motion.div>
   );

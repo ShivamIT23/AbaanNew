@@ -10,16 +10,16 @@ const Navbar = () => {
         <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
           <img
             src="/images/logo.png"
-            className="mix-blend-screen max-w-[20vw] xs:w-[15vw] sm:w-[13vw] md:w-[7vw] lgmd:w-[6vw] "
+            className="mix-blend-screen max-w-[20vw] xs:w-[15vw] sm:w-[13vw] md:w-[7vw] lg:w-[6vw] "
             alt=""
           />
         </div>
-        <div className="absolute -right-4 xs:-right-7  text-[7vw] flex justify-center items-center cursor-pointer md:hidden">
+        <div className="absolute -right-4 xs:-right-7 z-40 text-[7vw] flex justify-center items-center cursor-pointer md:hidden">
           <Hambutton />
         </div>
 
         <div className="hidden md:flex justify-center items-center gap-4 lg:gap-10">
-          <Link className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link to="/" className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
             Home
             <div
               className="w-0 h-0 
@@ -32,8 +32,8 @@ const Navbar = () => {
             ></div>
           </Link>
 
-          <Link className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
-            Product Page
+          <Link to="/shop" className="flex items-center font-archivo gap-[2px] font-normal text-[1.4vw] lg:text-[1.1vw]">
+            Shop
             <div
               className="w-0 h-0 
             border-l-[0.4vw] border-l-transparent 
@@ -42,11 +42,11 @@ const Navbar = () => {
             ></div>
           </Link>
 
-          <Link className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link to="/about" className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
             About us
           </Link>
 
-          <Link className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
+          <Link to="/contact" className="flex items-center font-archivo gap-1 font-normal text-[1.4vw] lg:text-[1.1vw]">
             Contact us
           </Link>
         </div>

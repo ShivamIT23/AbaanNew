@@ -1,6 +1,19 @@
 import { useState } from "react";
 import NavigationIcon from "../components/NavigationIcon";
-import ChocolateSide from "../components/ChocolateSide/ChocolateSide";
+import { motion } from "framer-motion";
+import NutsLeft from "../components/absoluteImages/NutsLeft";
+import ChocolateLeft from "../components/absoluteImages/ChocolateLeft";
+
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
 
 const statistics1 = [
   {
@@ -23,8 +36,21 @@ const statistics1 = [
 
 export default function About() {
   return (
-    <div className="min-h-screen w-[100svw]">
-      <section className="min-h-[30svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8">
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+      className="min-h-screen w-[100svw]"
+    >
+      <motion.section
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="min-h-[30svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8"
+      >
         <div className=" flex flex-col gap-8 h-fit">
           <h3 className="globalHeaderFont w-full text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center">
             About Us
@@ -45,10 +71,16 @@ export default function About() {
           alt="design top"
           className=" rotate-180 hidden md:block h-[10svh] w-full"
         />
-      </section>
+      </motion.section>
       <ImageSection />
       <Banner />
-      <section className="bg-transparent md:page_container_reverse min-h-[40svh] h-fit w-[100svw] flex flex-col items-center gap-6">
+      <motion.section
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="bg-transparent md:page_container_reverse min-h-[40svh] h-fit w-[100svw] flex flex-col items-center gap-6"
+      >
         <div className="flex flex-col gap-4 items-center max-h-fit relative py-[4vh]">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl text-center px-[2vw]">
             Our<span> Statics</span>
@@ -72,13 +104,17 @@ export default function About() {
         <section className="bg-transparent min-h-[30svh] h-fit w-[100svw] hidden md:flex flex-col items-center gap-6">
           <div className="w-full h-fit">
             <div className="w-full flex items-center justify-center relative h-[70vh]">
-              <img
+              <motion.img
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                viewport={{ once: true }}
                 src="/images/staticsMap.png"
                 alt=""
                 className="h-full drop-shadow-md"
               />
               <div className="absolute top-2/3 -translate-y-1/2 left-0 w-0 md:w-36 lg:w-60 z-[10]">
-                <ChocolateSide />
+                <ChocolateLeft />
               </div>
             </div>
             <div className=" flex flex-col gap-4 items-center max-h-fit relative pt-[4vh]">
@@ -151,15 +187,17 @@ export default function About() {
                 titleColor="#EC1D23"
               />
             </div>
-            <img
-              src="/images/nuts.png"
-              alt="nuts"
-              className="absolute w-0 md:w-28 lg:w-40 z-10 drop-shadow-lg top-[50%] -translate-y-1/2 right-[2%]"
-            />
+            <NutsLeft className="absolute w-0 md:w-28 lg:w-40 z-10 drop-shadow-lg top-[50%] -translate-y-1/2 right-[2%]" />
           </div>
         </section>
-      </section>
-      <section className="page_container_reverse min-h-[80svh] h-fit w-[100svw] hidden md:flex flex-col items-center pt-[4vh]">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="page_container_reverse min-h-[80svh] h-fit w-[100svw] hidden md:flex flex-col items-center pt-[4vh]"
+      >
         <div className="flex flex-col gap-4 items-center max-h-fit relative py-[4vh]">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl text-center px-[2vw]">
             Major Outlet<span> We are available in</span>
@@ -169,60 +207,82 @@ export default function About() {
           <img src="/images/Available.png" alt="" className="w-[60%]" />
         </div>
         <div className="w-full flex gap-6 justify-center items-center h-fit py-[6vh]">
-          <img src="/images/about_bottom1.png" alt="" className="w-[16%] hover:drop-shadow-lg transition hover:scale-105" />
-          <img src="/images/about_bottom2.png" alt="" className="w-[16%] hover:drop-shadow-lg transition hover:scale-105" />
-          <img src="/images/about_bottom3.png" alt="" className="w-[16%] hover:drop-shadow-lg transition hover:scale-105" />
-          <img src="/images/about_bottom4.png" alt="" className="w-[16%] hover:drop-shadow-lg transition hover:scale-105" />
+          <img
+            src="/images/about_bottom1.png"
+            alt=""
+            className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
+          />
+          <img
+            src="/images/about_bottom2.png"
+            alt=""
+            className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
+          />
+          <img
+            src="/images/about_bottom3.png"
+            alt=""
+            className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
+          />
+          <img
+            src="/images/about_bottom4.png"
+            alt=""
+            className="w-[16%] hover:drop-shadow-lg transition hover:scale-105"
+          />
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </motion.div>
   );
 }
 
 function ImageSection() {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="min-h-[50vh] h-fit w-[100svw] md:bg-white py-8 relative">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{ once: true }}
+      className="min-h-[50vh] h-fit w-[100svw] md:bg-white py-8 relative"
+    >
       <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-evenly w-full h-fit min-h-full">
-      <div className="globalHeaderFont block lg:hidden text-4xl text-center md:text-5xl lg:pr-10 relative">
-            Our <span>Journey </span>Began
-            <br /> With a Simple Dream
-          </div>
-          <div className="relative block lg:hidden w-[80%] text-[#646464]">
-            <p
-              className={`relative transition-all duration-300 ${
-                !expanded ? "line-clamp-4 lg:line-clamp-none" : ""
-              }`}
-            >
-              For over three decades, Abaan Chocolates has been dedicated to
-              creating premium-quality chocolates that delight our customers. We
-              take pride in our delectable range of classic flavors and the
-              innovative recipes we've crafted. Whether you're celebrating a
-              special occasion or simply indulging your love for chocolate,
-              Abaan promises an exceptional experience with every bite of our
-              exquisite chocolates and desserts.
-              <img
-                src="/images/triangle2.png"
-                alt="triangle"
-                className="absolute bottom-2/3 translate-y-1/2 -right-20 w-10"
-              />
-              <img
-                src="/images/dot2.png"
-                alt="Dot Img"
-                className="w-20 absolute -bottom-6 -right-6"
-              />
-            </p>
+        <div className="globalHeaderFont block lg:hidden text-4xl text-center md:text-5xl lg:pr-10 relative">
+          Our <span>Journey </span>Began
+          <br /> With a Simple Dream
+        </div>
+        <div className="relative block lg:hidden w-[80%] text-[#646464]">
+          <p
+            className={`relative transition-all duration-300 ${
+              !expanded ? "line-clamp-4 lg:line-clamp-none" : ""
+            }`}
+          >
+            For over three decades, Abaan Chocolates has been dedicated to
+            creating premium-quality chocolates that delight our customers. We
+            take pride in our delectable range of classic flavors and the
+            innovative recipes we've crafted. Whether you're celebrating a
+            special occasion or simply indulging your love for chocolate, Abaan
+            promises an exceptional experience with every bite of our exquisite
+            chocolates and desserts.
+            <img
+              src="/images/triangle2.png"
+              alt="triangle"
+              className="absolute bottom-2/3 translate-y-1/2 -right-20 w-10"
+            />
+            <img
+              src="/images/dot2.png"
+              alt="Dot Img"
+              className="w-20 absolute -bottom-6 -right-6"
+            />
+          </p>
 
-            {/* Show toggle only on small & medium screens (lg:hidden) */}
-            <div className="mt-2 lg:hidden">
-              <button
-                className="text-[#B67352] font-semibold"
-                onClick={() => setExpanded(!expanded)}
-              >
-                {expanded ? "Show less" : "Show more"}
-              </button>
-            </div>
+          {/* Show toggle only on small & medium screens (lg:hidden) */}
+          <div className="mt-2 lg:hidden">
+            <button
+              className="text-[#B67352] font-semibold"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? "Show less" : "Show more"}
+            </button>
           </div>
+        </div>
         <div className="flex justify-center px-[5vw] relative w-full md:w-[80%] lg:w-[40%] py-4">
           <div className="relative">
             <div className=" shineback_About w-full h-full"></div>
@@ -281,25 +341,38 @@ function ImageSection() {
           </div>
         </div>
       </div>
-      <img
-        src="/images/nuts.png"
-        alt="nuts"
-        className="absolute  w-0 md:w-28 lg:w-40 z-10 drop-shadow-lg top-[50%] -translate-y-1/2 right-[4%]"
-      />
-    </div>
+      <NutsLeft className="absolute w-0 md:w-28 lg:w-40 z-10 drop-shadow-lg top-[50%] -translate-y-1/2 right-[4%]" />
+    </motion.div>
   );
 }
 
 function Banner() {
   return (
-    <div className="relative w-full h-fit">
-      <img src="/images/about_banner1.png" alt="" />
-      <img
-        src="/images/about_banner2.png"
-        alt=""
-        className="absolute z-10 right-0 h-[100%] bottom-0"
-      />
-    </div>
+    <>
+      <motion.div
+        initial={{ opacity: 0, scale: 1.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="relative hidden md:block w-full h-fit"
+      >
+        <img src="/images/about_banner1.png" alt="" />
+        <img
+          src="/images/about_banner2.png"
+          alt=""
+          className="absolute z-10 right-0 h-[100%] bottom-0"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 1.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="relative block md:hidden w-full h-fit"
+      >
+        <img src="/images/about_banner3.png" alt="" />
+      </motion.div>
+    </>
   );
 }
 

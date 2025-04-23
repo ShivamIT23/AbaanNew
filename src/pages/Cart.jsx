@@ -1,6 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavigationIcon from "../components/NavigationIcon";
 import { useCartStore } from "../context/Cart";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
 
 export default function Cart() {
   const items = useCartStore((state) => state.items);
@@ -18,7 +30,14 @@ export default function Cart() {
     console.log("🛒 Cart Items:", items);
   }, [items]);
   return (
-    <main className="min-h-screen w-[100svw]">
+    <motion.main
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+      className="min-h-screen w-[100svw]"
+    >
       <section className="min-h-[30svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-5 md:gap-0">
         <div className=" flex flex-col gap-8 h-fit pb-[5vh]">
           <h3 className="globalHeaderFont w-full text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center">
@@ -51,17 +70,17 @@ export default function Cart() {
                       Product Deatils
                     </p>
                     <div className="sm:w-[30%] lg:w-[55%] flex flex-row sm:flex-col lg:flex-row pb-4 sm:pb-0 font-normal sm:font-medium items-center justify-between">
-                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center lg:justify-start">
+                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center">
                         Price
                       </p>
-                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center lg:justify-start">
+                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center">
                         Quantity
                       </p>
-                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center lg:justify-start">
+                      <p className="w-1/3 sm:w-full lg:w-1/3 flex justify-center">
                         Total
                       </p>
                     </div>
-                      <p className="w-[5%]"></p>
+                    <p className="w-[5%]"></p>
                   </h3>
                   <div className="w-full h-[1px] bg-[#AAAAAA]"></div>
                 </div>
@@ -113,7 +132,7 @@ export default function Cart() {
                         ${totalPrice + 20}
                       </p>
                     </h3>
-                    <div className="flex w-full px-2">
+                    <a href="/checkout" className="flex w-full px-2">
                       <button className="btn-primary w-full justify-center px-4 min-h-8 py-3 flex items-center text-lg">
                         Proceed to Checkout
                         <img
@@ -122,7 +141,7 @@ export default function Cart() {
                           alt=""
                         />
                       </button>
-                    </div>
+                    </a>
                     <div className="w-full h-[2px] bg-[#AAAAAA50]"></div>
                   </div>
                 </div>
@@ -176,54 +195,82 @@ export default function Cart() {
           <img
             src="/images/topPattern.png"
             alt="design top"
-            className=" rotate-180 hidden md:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"
+            className=" rotate-180 hidden lg:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"
           />
         </section>
       </section>
-    </main>
+    </motion.main>
   );
 }
 
 function Items({ item }) {
+  const [count, setCount] = useState(item.quantity);
   const { updateQuantity, removeFromCart } = useCartStore();
 
-  // const handleQtyChange = (delta) => {
-  //   const newQty = item.quantity + delta;
-  //   if (newQty >= 0) updateQuantity(item.id, newQty);
-  // };
+  const handleQtyChange = (operator) => {
+    const newNumber = count + operator;
+
+    if (newNumber <= 0) {
+      removeFromCart(item.id);
+    } else {
+      setCount(newNumber);
+      updateQuantity(item.id, newNumber);
+    }
+  };
 
   const handleRemoveItems = () => {
-    console.log(item.id);
     let res = removeFromCart(item.id);
     console.log(res);
   };
 
-  const itemTotal = (item.price * item.quantity).toFixed(2);
+  const itemTotal = (item.price * count).toFixed(2);
 
   return (
     <div className="flex w-full flex-col justify-start font-bold items-center">
-      <h3 className="text-[#0F0200] w-full flex flex-col sm:flex-row justify-between pb-5">
-        <div className="sm:w-[65%] lg:w-[40%] flex items-center justify-start gap-2">
+      <h3 className="text-[#0F0200] w-full flex flex-col sm:flex-row justify-between gap-4 xs:gap-1 pb-5">
+        <div className="w-full sm:w-[65%] lg:w-[40%] flex items-center justify-start gap-2">
           <img src={item.image} alt={item.name} className="w-[30%]" />
           <p className="">{item.name}</p>
         </div>
-        <div className="sm:w-[30%] lg:w-[55%] flex flex-row sm:flex-col lg:flex-row pb-4 sm:pb-0 items-center justify-between">
-          <p className="lg:w-[36.36%%] flex justify-start text-[#787878] items-center text-sm gap-1">
+        <div className="w-full sm:w-[30%] lg:w-[55%] flex flex-col xs:flex-row sm:flex-col lg:flex-row xs:pb-4 sm:pb-0 items-center justify-between">
+          <p className="lg:w-[36.36%] flex justify-center text-[#787878] items-center text-sm gap-1">
             AED{" "}
             <span className="text-[#EC1D23] text-lg flex -mt-1">
               {item.price}
             </span>
           </p>
-          <p className="lg:w-[36.36%%] flex items-center justify-start font-medium">
-            {item.quantity}
-          </p>
-          <p className="lg:w-[27.28%] flex items-center justify-start">
-            {itemTotal}
-          </p>
+          <div className="flex w-[36.36%] justify-center md:max-w-[300px] ">
+            <button
+              onClick={() => handleQtyChange(-1)}
+              className="w-1/5 lg:w-1/4 border border-[#AAAAAA] rounded-l-full px-4 min-h-8 py-3 flex items-center justify-center text-lg"
+            >
+              -
+            </button>
+            <button className="w-1/5 lg:w-1/4 border-y-[1px] border-[#AAAAAA] px-4 min-h-8 py-3 flex items-center justify-center text-lg">
+              {count}
+            </button>
+            <button
+              onClick={() => handleQtyChange(+1)}
+              className="w-1/5 lg:w-1/4 border border-[#AAAAAA] rounded-r-full px-4 min-h-8 py-3 flex items-center justify-center text-lg"
+            >
+              +
+            </button>
+          </div>
+          <div className="lg:w-[27.27%] flex gap-2 justify-between sm:justify-center items-center">
+            <p className="lg:w-full flex items-center justify-center">
+              {itemTotal}
+            </p>
+            <div
+              onClick={handleRemoveItems}
+              className="sm:w-[5%] hidden xs:flex sm:hidden items-center p-2 rounded-full border-[1px] cursor-pointer border-[#FF656545] aspect-square m-auto justify-center"
+            >
+              <button className="text-[#FF6565]">X</button>
+            </div>
+          </div>
         </div>
         <div
           onClick={handleRemoveItems}
-          className="sm:w-[5%] flex items-center p-2 rounded-full border-[1px] cursor-pointer border-[#FF656545] aspect-square m-auto justify-center"
+          className="flex xs:hidden sm:flex w-[20%] xs:w-[5%] items-center p-2 rounded-full border-[1px] cursor-pointer border-[#FF656545] aspect-square m-auto justify-center"
         >
           <button className="text-[#FF6565]">X</button>
         </div>

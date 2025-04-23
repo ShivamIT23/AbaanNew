@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         archivo: ["Archivo", "sans-serif"],
       },
+      scrollBehavior: {
+        smooth: 'smooth',
+      },
     },
     screens: {
       xs: "480px", // custom breakpoint
@@ -16,6 +19,7 @@ export default {
       xl: "1280px",
       "2xl": "1536px",
     },
+    
   },
   plugins: [],
 };

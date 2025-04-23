@@ -2,6 +2,17 @@ import LiveMap from "../components/LiveMap/LiveMap";
 import NavigationIcon from "../components/NavigationIcon";
 import { motion } from "framer-motion";
 
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+  duration: 0.8,
+  ease: "easeInOut",
+};
+
 const contactList = [
   {
     img: "/images/contact_s1.png",
@@ -23,10 +34,11 @@ const contactList = [
 export default function Contact() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{ once: true }}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
       className="min-h-screen w-[100svw]"
     >
       <section className="min-h-[40svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8">
@@ -187,7 +199,9 @@ function Card({ img, title, para }) {
         <h3 className="font-archivo font-bold text-lg xs:text-xs md:text-lg text-[#0F0200]">
           {title}
         </h3>
-        <p className="text-[#646464] w-[70%] text-sm xs:text-[8px] md:text-sm">{para}</p>
+        <p className="text-[#646464] w-[70%] text-sm xs:text-[8px] md:text-sm">
+          {para}
+        </p>
       </div>
     </div>
   );

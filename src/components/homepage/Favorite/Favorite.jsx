@@ -1,8 +1,8 @@
 import React from "react";
-import ChocolateSide from "../../ChocolateSide/ChocolateSide";
 import { motion } from "framer-motion";
 import ProductComponent from "../../ProductComponent/ProductComponent";
 import { productList1 } from "../../../lib/ProductList";
+import ChocolateLeft from "../../absoluteImages/ChocolateLeft";
 
 export default function Favorite({startAnimation}) {
   return (
@@ -15,7 +15,7 @@ export default function Favorite({startAnimation}) {
       className="min-h-[100svh] page_container_reverse relative w-[100svw]"
     >
       <div className="absolute top-0 left-0 w-0 md:w-36 lg:w-60 z-[10]">
-        <ChocolateSide />
+        <ChocolateLeft />
       </div>
       <img src="/images/topPattern.png" alt="design top" className="hidden md:block" />
       <div className="flex flex-col items-center gap-8 px-[10vw] pb-16">

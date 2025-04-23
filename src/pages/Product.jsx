@@ -11,6 +11,17 @@ import {
   getProductById,
 } from "../lib/ProductList";
 
+const pageVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+  duration: 0.6,
+  ease: "easeInOut",
+};
+
 const tabs = ["Description", "Additional Information", "Reviews"];
 
 export default function Product() {
@@ -39,18 +50,24 @@ export default function Product() {
         image: product.img,
         quantity: count,
       });
-      if(res == "success"){
-        alert("Added To Cart Sucessfully")
-      }
-      else{
-        alert("Currently not available")
-      }
-  }
+    if (res == "success") {
+      alert("Added To Cart Sucessfully");
+    } else {
+      alert("Currently not available");
+    }
+  };
 
   const sortedTabs = [inHeading, ...tabs.filter((t) => t !== inHeading)];
 
   return (
-    <main className="min-h-screen w-[100svw]">
+    <motion.main
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+      className="min-h-screen w-[100svw]"
+    >
       <section className="min-h-[30svh] h-fit page_container pt-[20vh] flex flex-col justify-between gap-8">
         <div className=" flex flex-col gap-8 h-fit pb-[5vh]">
           <h3 className="globalHeaderFont w-full text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center">
@@ -291,7 +308,7 @@ export default function Product() {
       <section className="bg-transparent md:bg-white w-full min-h-[60svh] h-fit">
         <MoreProducts />
       </section>
-    </main>
+    </motion.main>
   );
 }
 
