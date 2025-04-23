@@ -3,13 +3,14 @@ import NavigationIcon from "../components/NavigationIcon";
 import { motion, AnimatePresence } from "framer-motion";
 import ProductComponent from "../components/ProductComponent/ProductComponent";
 import { useCartStore } from "../context/Cart";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   productList1,
   productList2,
   productList3,
   getProductById,
 } from "../lib/ProductList";
+import toast from "react-hot-toast";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -25,6 +26,7 @@ const pageTransition = {
 const tabs = ["Description", "Additional Information", "Reviews"];
 
 export default function Product() {
+  const navigate = useNavigate();
   const [count, setCount] = useState(1);
   const [inView, setInView] = useState(0);
   const [inHeading, setInHeading] = useState("Description");
@@ -40,6 +42,66 @@ export default function Product() {
     setProduct(productGot);
   }, [location.pathname]);
 
+  const showToast = () => {
+    // Add a specific class to disable interactions for the whole page except the toast
+    const overlay = document.createElement("div");
+    overlay.id = "overlay";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+    overlay.style.zIndex = "9998"; // Below the toast, but above other content
+    document.body.appendChild(overlay);
+
+    toast.custom(
+      (t) => (
+        <div
+          className={`${
+            t.visible ? "animate-enter" : "animate-leave"
+          } fixed z-[9999] backdrop-blur-none bg-white shadow-xl px-6 py-4 rounded-xl`}
+        >
+          <p className="mb-3 text-center font-semibold text-black">
+            ✅ Added to Cart!
+          </p>
+          <div className="flex justify-between gap-4">
+            <button
+              className="text-sm text-gray-600 hover:underline"
+              onClick={() => {
+                toast.dismiss(t.id);
+                document.body.style.pointerEvents = "auto"; // Re-enable pointer events
+                overlay.remove(); // Remove overlay
+              }}
+            >
+              Continue Shopping
+            </button>
+            <button
+              className="text-sm text-purple-600 font-medium hover:underline"
+              onClick={() => {
+                toast.dismiss(t.id);
+                document.body.style.pointerEvents = "auto"; // Re-enable pointer events
+                overlay.remove(); // Remove overlay
+                navigate("/cart");
+              }}
+            >
+              Go to Cart
+            </button>
+          </div>
+        </div>
+      ),
+      {
+        duration: Infinity, // Keep the toast visible indefinitely
+        style: {
+          pointerEvents: "auto", // Ensure toast can be interacted with
+        },
+      }
+    );
+
+    // Disable only page interactions, not the toast
+    document.body.style.pointerEvents = "none";
+  };
+
   const handleCartAdd = () => {
     let res = 0;
     if (count > 0)
@@ -51,9 +113,22 @@ export default function Product() {
         quantity: count,
       });
     if (res == "success") {
-      alert("Added To Cart Sucessfully");
+      showToast();
     } else {
-      alert("Currently not available");
+      toast.custom(
+        (t) => (
+          <div
+            className={`${
+              t.visible ? "animate-enter" : "animate-leave"
+            } bg-red-100 border border-red-300 text-red-700 px-4 py-2 rounded-lg shadow-lg font-medium`}
+          >
+            ❌ Something went wrong!
+          </div>
+        ),
+        {
+          duration: 2500,
+        }
+      );
     }
   };
 
@@ -112,7 +187,7 @@ export default function Product() {
                 <div className="w-[30%] lg:w-[20%] hidden md:flex flex-col items-center gap-6 my-auto">
                   {[1, 2, 3, 4].map((num, idx) => (
                     <img
-                    loading="lazy"
+                      loading="lazy"
                       onClick={() => setInView(idx)}
                       key={idx}
                       src={product.img}
@@ -131,7 +206,7 @@ export default function Product() {
                 {/* Main preview */}
                 <div className="md:w-[70%] lg:w-[80%] rounded-xl flex justify-center items-center bg-[#FFFAF4] md:drop-shadow-md drop-shadow-xl">
                   <img
-                  loading="lazy"
+                    loading="lazy"
                     src={product.img}
                     alt="Main Chocolate"
                     className="w-full object-cover"
@@ -143,7 +218,7 @@ export default function Product() {
               <div className="w-full flex md:hidden drop-shadow-lg items-center gap-6 my-auto">
                 {[1, 2, 3, 4].map((num, idx) => (
                   <img
-                  loading="lazy"
+                    loading="lazy"
                     onClick={() => setInView(idx)}
                     key={idx}
                     src={product.img}
@@ -219,7 +294,7 @@ export default function Product() {
                     >
                       Add to Cart
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src="/images/btnArrow.svg"
                         className="w-[3vw] max-w-[20px]"
                         alt=""
@@ -303,7 +378,7 @@ export default function Product() {
             </AnimatePresence>
           </section>
           <img
-          loading="lazy"
+            loading="lazy"
             src="/images/topPattern.png"
             alt="design top"
             className=" rotate-180 hidden md:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"

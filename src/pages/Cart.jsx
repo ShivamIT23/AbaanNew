@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import NavigationIcon from "../components/NavigationIcon";
 import { useCartStore } from "../context/Cart";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -136,7 +137,7 @@ export default function Cart() {
                       <button className="btn-primary w-full justify-center px-4 min-h-8 py-3 flex items-center text-lg">
                         Proceed to Checkout
                         <img
-                        loading="lazy"
+                          loading="lazy"
                           src="/images/btnArrow.svg"
                           className="w-[3vw] max-w-[20px]"
                           alt=""
@@ -194,7 +195,7 @@ export default function Cart() {
             </a>
           </section>
           <img
-          loading="lazy"
+            loading="lazy"
             src="/images/topPattern.png"
             alt="design top"
             className=" rotate-180 hidden lg:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"
@@ -206,32 +207,93 @@ export default function Cart() {
 }
 
 function Items({ item }) {
-  const [count, setCount] = useState(item.quantity);
   const { updateQuantity, removeFromCart } = useCartStore();
 
-  const handleQtyChange = (operator) => {
-    const newNumber = count + operator;
+  const showToast = () => {
+    // Add a specific class to disable interactions for the whole page except the toast
+    const overlay = document.createElement("div");
+    overlay.id = "overlay";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+    overlay.style.zIndex = "9998"; // Below the toast, but above other content
+    document.body.appendChild(overlay);
 
-    if (newNumber <= 0) {
-      removeFromCart(item.id);
+    toast.custom(
+      (t) => (
+        <div
+          className={`${
+            t.visible ? "animate-enter" : "animate-leave"
+          } fixed z-[9999] font-archivo backdrop-blur-none bg-white shadow-xl px-6 py-4 rounded-xl`}
+        >
+          <p className="mb-3 text-center font-semibold text-black">
+            ⚠️ Are You Sure Sure!
+          </p>
+          <div className="flex justify-between gap-4">
+            <button
+              className="text-[12px] text-[#EC1D23] font-semibold hover:underline"
+              onClick={() => {
+                toast.dismiss(t.id);
+                document.body.style.pointerEvents = "auto"; // Re-enable pointer events
+                overlay.remove(); // Remove overlay
+                removeFromCart(item.id);
+              }}
+            >
+              Remove
+            </button>
+            <button
+              className="text-sm text-blue-500 font-bold hover:underline"
+              onClick={() => {
+                toast.dismiss(t.id);
+                document.body.style.pointerEvents = "auto"; // Re-enable pointer events
+                overlay.remove(); // Remove overlay
+              }}
+            >
+              Don't Remove
+            </button>
+          </div>
+        </div>
+      ),
+      {
+        duration: Infinity, // Keep the toast visible indefinitely
+        style: {
+          pointerEvents: "auto", // Ensure toast can be interacted with
+        },
+      }
+    );
+
+    // Disable only page interactions, not the toast
+    document.body.style.pointerEvents = "none";
+  };
+
+  const handleQtyChange = (operator) => {
+    const newQuantity = item.quantity + operator;
+    if (newQuantity <= 0) {
+      showToast();
     } else {
-      setCount(newNumber);
-      updateQuantity(item.id, newNumber);
+      updateQuantity(item.id, newQuantity);
     }
   };
 
   const handleRemoveItems = () => {
-    let res = removeFromCart(item.id);
-    console.log(res);
+    showToast();
   };
 
-  const itemTotal = (item.price * count).toFixed(2);
+  const itemTotal = (item.price * item.quantity).toFixed(2);
 
   return (
     <div className="flex w-full flex-col justify-start font-bold items-center">
       <h3 className="text-[#0F0200] w-full flex flex-col sm:flex-row justify-between gap-4 xs:gap-1 pb-5">
         <div className="w-full sm:w-[65%] lg:w-[40%] flex items-center justify-start gap-2">
-          <img loading="lazy" src={item.image} alt={item.name} className="w-[30%]" />
+          <img
+            loading="lazy"
+            src={item.image}
+            alt={item.name}
+            className="w-[30%]"
+          />
           <p className="">{item.name}</p>
         </div>
         <div className="w-full sm:w-[30%] lg:w-[55%] flex flex-col xs:flex-row sm:flex-col lg:flex-row xs:pb-4 sm:pb-0 items-center justify-between">
@@ -249,7 +311,7 @@ function Items({ item }) {
               -
             </button>
             <button className="w-1/5 lg:w-1/4 border-y-[1px] border-[#AAAAAA] px-4 min-h-8 py-3 flex items-center justify-center text-lg">
-              {count}
+              {item.quantity}
             </button>
             <button
               onClick={() => handleQtyChange(+1)}

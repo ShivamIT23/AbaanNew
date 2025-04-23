@@ -18,6 +18,7 @@ import Product from "./pages/Product";
 import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import { Toaster } from "react-hot-toast";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -41,6 +42,19 @@ function AnimatedRoutes() {
 const App = () => {
   return (
     <div className="relative min-h-screen h-fit ">
+      <Toaster
+  position="top-center" // for success/error
+  toastOptions={{
+    success: {
+      duration: 3000,
+      style: { /* optional custom styles */ }
+    },
+    error: {
+      duration: 3000,
+      style: { /* optional custom styles */ }
+    }
+  }}
+/>
       <Router>
         <ScrollToTop />
         <div className="realtive h-fit">

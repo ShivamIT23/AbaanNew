@@ -44,7 +44,7 @@ const peopleThoughts = [
   },
 ];
 
-export default function HeartPeople({startAnimation}) {
+export default function HeartPeople({ startAnimation }) {
   const [customerNumber, setCustomerNumber] = useState(1);
 
   useEffect(() => {
@@ -61,19 +61,19 @@ export default function HeartPeople({startAnimation}) {
 
   return (
     <motion.div
-    key={startAnimation ? "start" : "stop"}
+      key={startAnimation ? "start" : "stop"}
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
       style={{
         background: `linear-gradient(135deg,#EFD7EF 8%, #F5F9FC 40%, #F8EAE1 66%, #EAF8F9 91%)`,
       }}
       className="w-[100svw] min-h-screen relative h-fit flex flex-col gap-4 items-center justify-center"
     >
-      <div className="flex flex-col w-[50%] min-h-[50vh] h-fit relative justify-between items-center">
+      <div className="flex flex-col w-[70%] md:w-[50%] min-h-[50vh] h-fit relative justify-between items-center">
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/quotes1.png"
           alt=""
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%]"
@@ -142,52 +142,52 @@ export default function HeartPeople({startAnimation}) {
       {/* Decorative people images */}
       <>
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person1.png"
           alt=""
-          className="w-16 absolute top-[30%] left-[15%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] left-0 md:left-[8%] xl:left-[15%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person2.png"
           alt=""
-          className="w-16 absolute top-[60%] left-[18%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] left-[2.5%] md:left-[12%] xl:left-[18%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person3.png"
           alt=""
-          className="w-16 absolute top-[40%] left-[25%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] left-[5%] md:left-[15%] xl:left-[25%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person4.png"
           alt=""
-          className="w-16 absolute top-[70%] left-[30%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] left-[7.5%] md:left-[20%] xl:left-[30%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person5.png"
           alt=""
-          className="w-16 absolute top-[30%] right-[15%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] right-[0%] md:right-[8%] xl:right-[15%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person6.png"
           alt=""
-          className="w-16 absolute top-[60%] right-[18%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] right-[2.5%] md:right-[12%] xl:right-[18%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person7.png"
           alt=""
-          className="w-16 absolute top-[40%] right-[25%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] right-[5%] md:right-[15%] xl:right-[25%]"
         />
         <img
-        loading="lazy"
+          loading="lazy"
           src="/images/person8.png"
           alt=""
-          className="w-16 absolute top-[70%] right-[30%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] right-[7.5%] md:right-[20%] xl:right-[30%]"
         />
       </>
     </motion.div>

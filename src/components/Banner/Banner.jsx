@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SplashImage from "../SplashImage/SplashImage";
 
 export default function Banner({ imgSrc , startAnimation }) {
   return (
@@ -11,7 +12,7 @@ export default function Banner({ imgSrc , startAnimation }) {
       viewport={{once: true}}
       className="w-full h-fit"
     >
-      <img loading="lazy" src={imgSrc} alt="" />
+      <SplashImage imgSrc={imgSrc} defaultImg="/images/about_banner1.png" />
     </motion.div>
   );
 }

@@ -1,18 +1,19 @@
 import { useState } from "react";
 
-export default function SplashImage({imgSrc,className}) {
+export default function SplashImage({bgColor = "inherit",imgSrc,className, defaultImg="/images/choco1.png"}) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div className={`relative ${className}`}>
       {!isLoaded && (
         <img
-          src="/images/choco1.png"
+          src={defaultImg}
           alt="Placeholder"
           className="w-full h-auto absolute inset-0 object-cover"
         />
       )}
       <img
+      style={{ backgroundColor: `${bgColor}` }}
         src={imgSrc}
         alt="Splash"
         loading="lazy"

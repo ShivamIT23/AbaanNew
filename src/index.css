@@ -18,7 +18,9 @@
   }
 }
 
-.archivo ,p , button{
+.archivo,
+p,
+button {
   font-family: "Archivo", sans-serif;
 }
 
@@ -52,13 +54,11 @@ html {
   }
 }
 
-
 @media only screen and (max-width: 1024px) {
-  .shadow-component{
-    box-shadow: 0px 4px 16px 0px #F83D8E;
+  .shadow-component {
+    box-shadow: 0px 4px 16px 0px #f83d8e;
   }
 }
-
 
 @keyframes blink {
   0% {
@@ -76,24 +76,62 @@ html {
   animation: blink 1s infinite;
 }
 
-.shineback{/* Gradient */
+.shineback {
+  /* Gradient */
 
   position: absolute;
   right: 50%;
   translate: 50% 45%;
   bottom: 50%;
-  
-  background: radial-gradient(50% 50% at 50% 50%, #FBAB2A 0%, #FFFFFF 90%);
-  border-radius: 546px;
-  }
 
-.shineback_About{/* Gradient */
+  background: radial-gradient(50% 50% at 50% 50%, #fbab2a 0%, #ffffff 90%);
+  border-radius: 546px;
+}
+
+.shineback_About {
+  /* Gradient */
 
   position: absolute;
   right: 50%;
   translate: 50% 45%;
   bottom: 50%;
   border-radius: 546px;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
   }
+  60% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
+.blurred {
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
 
+@keyframes bounce-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+}
+
+.animate-enter {
+  animation: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-leave {
+  animation: bounce-out 0.3s ease-in forwards;
+}

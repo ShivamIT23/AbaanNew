@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ChocolateLeft from "../absoluteImages/ChocolateLeft";
+import SplashImage from "../SplashImage/SplashImage";
 
 export default function Instagram({ startAnimation }) {
   return (
@@ -28,62 +29,37 @@ export default function Instagram({ startAnimation }) {
           </p>
         </div>
         <div className="grid lg:hidden grid-cols-1 shadow-component sm:grid-cols-2 gap-6 px-[4vw] py-[4vh] mb-[6vh] bg-[#F8F4F1] rounded-3xl">
-          <img
-          loading="lazy"
-            src="/images/insta1.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta2.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta3.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta4.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
+          {[
+            "/images/insta1.png",
+            "/images/insta2.png",
+            "/images/insta3.png",
+            "/images/insta4.png",
+          ].map((img, idx) => {
+            return (
+              <SplashImage
+                key={idx}
+                imgSrc={img}
+                className="col-span-1 relative z-[10] drop-shadow-sm"
+              />
+            );
+          })}
         </div>
         <div className="hidden lg:grid grid-cols-5 gap-8 w-fit py-6 h-fit relative">
-          <img
-          loading="lazy"
-            src="/images/insta1.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta2.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta3.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta4.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
-          <img
-          loading="lazy"
-            src="/images/insta5.png"
-            alt=""
-            className="col-span-1 relative z-[10] drop-shadow-sm"
-          />
+          {[
+            "/images/insta1.png",
+            "/images/insta2.png",
+            "/images/insta3.png",
+            "/images/insta4.png",
+            "/images/insta5.png",
+          ].map((img, idx) => {
+            return (
+              <SplashImage
+                key={idx}
+                imgSrc={img}
+                className="col-span-1 relative z-[10] drop-shadow-sm"
+              />
+            );
+          })}
           <div className="absolute w-20 aspect-square top-0 -left-6 bg-[#EC1D23] rounded-full hover:shadow-md hover:scale-125 transition"></div>
           <div className="absolute w-20 aspect-square bottom-0 -right-8 bg-[#683292] rounded-full hover:shadow-md hover:scale-125 transition"></div>
         </div>

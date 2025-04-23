@@ -4,6 +4,7 @@ import { products } from "../../lib/ProductList";
 import NutsLeft from "../absoluteImages/NutsLeft";
 import ChocolateRight from "../absoluteImages/ChocolateRight";
 import ChocolateLeft from "../absoluteImages/ChocolateLeft";
+import SplashImage from "../SplashImage/SplashImage";
 
 export default function Range({ startAnimation }) {
   return (
@@ -21,7 +22,12 @@ export default function Range({ startAnimation }) {
       <div className="absolute -top-20 lg:-top-36 left-0 w-0 md:w-36 lg:w-60 z-[10]">
         <ChocolateLeft />
       </div>
-      <img loading="lazy" src="/images/topPattern.png" alt="design top" className="" />
+      <img
+        loading="lazy"
+        src="/images/topPattern.png"
+        alt="design top"
+        className=""
+      />
       <div className="flex flex-col items-center h-fit gap-8 px-[10vw] pb-16">
         <div className=" flex flex-col gap-6 items-center max-h-fit relative">
           <h3 className="globalHeaderFont text-5xl lg:text-6xl pt-4">
@@ -49,14 +55,9 @@ export default function Range({ startAnimation }) {
 function Card({ title, imgSrc }) {
   return (
     <div className="flex flex-col gap-5 w-full col-span-1 ">
-      <img
-      loading="lazy"
-        style={{
-          background: `linear-gradient(135deg, #EFD7EF 8%, #F5F9FC 43%, #F8EAE1 64%, #EAF8F9 87%)`,
-        }}
-        src={imgSrc}
-        alt="img"
-        className="py-4 px-5 w-full aspect-square shadow-lg rounded-xl"
+      <SplashImage
+        imgSrc={imgSrc}
+        className="py-4 px-5 w-full aspect-square shadow-lg rounded-xl RangeCard"
       />
       <h3
         style={{
