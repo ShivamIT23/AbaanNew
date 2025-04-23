@@ -11,7 +11,7 @@ export default function Banner({ imgSrc , startAnimation }) {
       viewport={{once: true}}
       className="w-full h-fit"
     >
-      <img src={imgSrc} alt="" />
+      <img loading="lazy" src={imgSrc} alt="" />
     </motion.div>
   );
 }

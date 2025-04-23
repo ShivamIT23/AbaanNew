@@ -45,6 +45,7 @@ export default function FemaleImage({ startAnimation }) {
             <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
               Explore Our Menu
               <img
+              loading="lazy"
                 src="/images/btnArrow.svg"
                 className="w-[3vw] max-w-[20px]"
                 alt=""
@@ -56,6 +57,7 @@ export default function FemaleImage({ startAnimation }) {
           <div className="globalHeaderFont text-5xl lg:pr-10 relative">
             Indulge in the rich flavors <br /> of <span>Dubai chocolates</span>
             <img
+            loading="lazy"
               src="/images/triangle1.png"
               alt="triangle"
               className="hidden md:block absolute bottom-0 right-20 w-10"
@@ -70,6 +72,7 @@ export default function FemaleImage({ startAnimation }) {
             <button className="btn-primary px-4 min-h-8 py-4 flex items-center text-lg">
               Explore Our Menu
               <img
+              loading="lazy"
                 src="/images/btnArrow.svg"
                 className="w-[3vw] max-w-[20px]"
                 alt=""
@@ -79,7 +82,7 @@ export default function FemaleImage({ startAnimation }) {
         </div>
       </div>
       <div className="hidden md:flex justify-end pr-10 -mt-16">
-        <img src="/images/halfCircle.png" alt="img4" className="w-32" />
+        <img loading="lazy" src="/images/halfCircle.png" alt="img4" className="w-32" />
       </div>
     </motion.div>
   );

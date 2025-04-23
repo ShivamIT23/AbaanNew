@@ -136,6 +136,7 @@ export default function Cart() {
                       <button className="btn-primary w-full justify-center px-4 min-h-8 py-3 flex items-center text-lg">
                         Proceed to Checkout
                         <img
+                        loading="lazy"
                           src="/images/btnArrow.svg"
                           className="w-[3vw] max-w-[20px]"
                           alt=""
@@ -193,6 +194,7 @@ export default function Cart() {
             </a>
           </section>
           <img
+          loading="lazy"
             src="/images/topPattern.png"
             alt="design top"
             className=" rotate-180 hidden lg:block h-[10svh] -ml-4  absolute bottom-0 w-[100svw]"
@@ -229,7 +231,7 @@ function Items({ item }) {
     <div className="flex w-full flex-col justify-start font-bold items-center">
       <h3 className="text-[#0F0200] w-full flex flex-col sm:flex-row justify-between gap-4 xs:gap-1 pb-5">
         <div className="w-full sm:w-[65%] lg:w-[40%] flex items-center justify-start gap-2">
-          <img src={item.image} alt={item.name} className="w-[30%]" />
+          <img loading="lazy" src={item.image} alt={item.name} className="w-[30%]" />
           <p className="">{item.name}</p>
         </div>
         <div className="w-full sm:w-[30%] lg:w-[55%] flex flex-col xs:flex-row sm:flex-col lg:flex-row xs:pb-4 sm:pb-0 items-center justify-between">

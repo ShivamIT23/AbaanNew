@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCartStore } from "../../context/Cart";
+import SplashImage from "../SplashImage/SplashImage";
 
 export default function Card({
   bgColor = "#F7F2F7",
@@ -34,13 +35,7 @@ export default function Card({
       className="flex flex-col gap-4 bg-white p-5 itemCard rounded-xl drop-shadow-md"
     >
       <div className="flex justify-center items-center relative">
-        <img
-        loading="lazy"
-          src={imgSrc}
-          alt="chocolate_img"
-          style={{ backgroundColor: `${bgColor}` }}
-          className={`rounded-xl `}
-        />
+        <SplashImage imgSrc={imgSrc} className="rounded-xl" />
         <button
           onClick={() => setLike((prev) => !prev)}
           className={`absolute w-8 h-8 rounded-full top-3 p-[6px] left-3 ${
@@ -66,7 +61,7 @@ export default function Card({
           className="bg-[#683292] group p-[10px] rounded-full w-10"
         >
           <img
-          loading="lazy"
+            loading="lazy"
             src="/images/cartBox.png"
             alt="cart"
             className="origin-center group-hover:scale-x-[-1] transition hover:drop-shadow-md"

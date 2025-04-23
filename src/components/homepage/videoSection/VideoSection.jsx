@@ -7,7 +7,7 @@ export default function VideoSection({startAnimation}) {
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      viewport={{once: true}} className="min-h-[100svh] md:bg-white flex justify-start py-[10vh] gap-16 flex-col items-center">
+      viewport={{once: true}} className="min-h-[30svh] md:bg-white flex justify-start py-[10vh] gap-16 flex-col items-center">
       <div className="flex justify-start flex-col items-center gap-6">
         <h2 className="globalHeaderFont text-4xl sm:text-5xl md:text-6xl text-center">
           <span>Kunafa </span>Chocolates!

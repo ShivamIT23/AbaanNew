@@ -34,6 +34,7 @@ export default function ImageSlider() {
             }}
           >
             <img
+            loading="lazy"
               src={`/images/${img}.png`}
               alt={img}
               className="rounded-2xl w-fit h-full object-contain pointer-events-none"
