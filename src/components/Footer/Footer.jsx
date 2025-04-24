@@ -7,7 +7,7 @@ export default function Footer() {
     document.body.scrollTop = 0;
   }
   return (
-    <div className="relative bottom-0 h-fit md:h-[40vh] min-h-[40vh] md:min-h-fit bg-[#36196A] w-[100svw] text-[#CFB6E2] font-archivo ">
+    <div className="relative bottom-0 h-fit min-h-[40vh] md:min-h-fit bg-[#36196A] w-[100svw] text-[#CFB6E2] font-archivo ">
       <div className="flex flex-col md:flex-row gap-6 md:gap-0 h-fit bg-[#36196A] justify-evenly min-h-full items-center">
         <div className="h-[60%] flex pt-10 md:pt-0 items-start">
           <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">

@@ -201,8 +201,8 @@ export default function Checkout() {
                       </a>
                     </h3>
                   </label>
-                  <div className="flex w-full px-2">
-                    <button className="btn-primary w-full justify-center px-4 gap-2 min-h-8 py-3 flex items-center text-lg mr-[4vw]">
+                  <div className="flex w-full px-2 mr-[4vw]">
+                    <button className="btn-primary w-full justify-center px-4 gap-2 min-h-8 py-3 flex items-center text-lg ">
                       Place Order Now
                       <img
                       loading="lazy"
