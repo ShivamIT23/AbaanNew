@@ -31,7 +31,7 @@ export default function SearchInterface() {
             placeholder="Search"
             className="w-full px-4 py-2 pr-10 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <Search className={`absolute right-3 top-1/2 transform -translate-y-1/2 ${searchTerm.length?"text-[#0F0200] cursor-pointer":"text-gray-400 cursor-not-allowed"}  w-4 h-4`} />
+          <Search className={`absolute z-[30] right-3 top-1/2 transform -translate-y-1/2 ${searchTerm.length?"text-[#0F0200] cursor-pointer":"text-gray-400 cursor-not-allowed"}  w-4 h-4`} />
         </div>
 
         {/* Grid Button */}
@@ -60,7 +60,7 @@ export default function SearchInterface() {
 
           {/* Dropdown Menu */}
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-[60]">
               {sortOptions.map((option) => (
                 <button
                   key={option}

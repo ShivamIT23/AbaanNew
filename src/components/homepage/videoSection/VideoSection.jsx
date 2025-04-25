@@ -10,7 +10,7 @@ export default function VideoSection({ startAnimation }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
       viewport={{ once: true }}
-      className="min-h-[30svh] md:bg-white flex justify-start py-[10vh] gap-16 flex-col items-center"
+      className="min-h-[30svh] md:bg-white flex justify-start py-[10vh] gap-8 md:gap-16 flex-col items-center"
     >
       <div className="flex justify-start flex-col items-center gap-6">
         <h2 className="globalHeaderFont text-4xl sm:text-5xl md:text-6xl text-center">

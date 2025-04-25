@@ -57,7 +57,7 @@ export default function FemaleImage({ startAnimation }) {
             </button>
           </div>
         </div>
-        <div className="flex flex-col items-center md:items-start pt-[10vh] gap-8 relative max-h-fit justify-center w-full md:w-[50%] px-[6vw] py-4">
+        <div className="flex flex-col items-center md:items-start pt-[5vh] md:pt-[10vh] gap-8 relative max-h-fit justify-center w-full md:w-[50%] px-[6vw] py-4">
           <div className="globalHeaderFont text-5xl lg:pr-10 relative">
             Indulge in the rich flavors <br /> of <span>Dubai chocolates</span>
             <img

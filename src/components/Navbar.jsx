@@ -15,7 +15,7 @@ const Navbar = () => {
             alt=""
           />
         </div>
-        <div className="absolute -right-4 xs:-right-7 z-40 text-[7vw] flex justify-center items-center cursor-pointer md:hidden">
+        <div className=" text-[7vw] flex justify-center w-full items-center cursor-pointer md:hidden">
           <Hambutton />
         </div>
 

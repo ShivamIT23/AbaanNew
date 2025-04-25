@@ -23,20 +23,20 @@ const Hambutton = () => {
     <>
       {/* White overlay that appears when menu is active */}
       {active && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-white z-[100]">
-          <div className="flex flex-col h-full w-full py-[20vh] justify-start items-center gap-[6vh]">
+        <div className="absolute top-0 -left-[8vw] w-[100dvw] h-screen bg-white z-[100]">
+          <div className="flex flex-col h-full w-full pt-[20vh] justify-start items-center gap-[6vh]">
             <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
               <img
                 loading="lazy"
                 src="/images/logo.png"
-                className="mix-blend-screen w-[80vw]  "
+                className="mix-blend-screen w-[60vw]  "
                 alt=""
               />
             </div>
             <Link
               onClick={() => setActive(false)}
               to="/"
-              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-4xl"
+              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-2xl"
             >
               Home
             </Link>
@@ -44,7 +44,7 @@ const Hambutton = () => {
             <Link
               onClick={() => setActive(false)}
               to="/shop"
-              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-4xl"
+              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-2xl"
             >
               Shop
             </Link>
@@ -52,7 +52,7 @@ const Hambutton = () => {
             <Link
               onClick={() => setActive(false)}
               to="/about"
-              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-4xl"
+              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-2xl"
             >
               About us
             </Link>
@@ -60,7 +60,7 @@ const Hambutton = () => {
             <Link
               onClick={() => setActive(false)}
               to="/contact"
-              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-4xl"
+              className="flex items-center globalHeaderFont gap-[2px] font-semibold text-2xl"
             >
               Contact us
             </Link>
@@ -76,7 +76,7 @@ const Hambutton = () => {
       >
         <motion.button
           onClick={() => setActive((prev) => !prev)}
-          className="fixed top-4 right-4 z-[110] h-[12vw] w-[12vw] sm:h-[8.5vw] sm:w-[8.5vw] rounded-full bg-blue transition-colors"
+          className="fixed top-0 right-4 z-[110] h-[12vw] w-[12vw] sm:h-[8.5vw] sm:w-[8.5vw] rounded-full bg-blue transition-colors"
           animate={active ? "open" : "closed"}
         >
           {/* Top line */}

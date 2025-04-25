@@ -69,7 +69,7 @@ export default function HeartPeople({ startAnimation }) {
       style={{
         background: `linear-gradient(135deg,#EFD7EF 8%, #F5F9FC 40%, #F8EAE1 66%, #EAF8F9 91%)`,
       }}
-      className="w-[100svw] min-h-screen relative h-fit flex flex-col gap-4 items-center justify-center"
+      className="w-[100svw] py-[3vh] min-h-screen relative h-fit flex flex-col gap-4 items-center justify-center"
     >
       <div className="flex flex-col w-[70%] md:w-[50%] min-h-[50vh] h-fit relative justify-between items-center">
         <img
