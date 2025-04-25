@@ -76,12 +76,12 @@ const Hambutton = () => {
       >
         <motion.button
           onClick={() => setActive((prev) => !prev)}
-          className="fixed top-0 right-4 z-[110] h-[12vw] w-[12vw] sm:h-[8.5vw] sm:w-[8.5vw] rounded-full bg-blue transition-colors"
+          className="absoute top-0 right-0 z-[110] h-[12vw] flex justify-end w-[12vw] sm:h-[8.5vw] sm:w-[8.5vw] rounded-full bg-blue transition-colors"
           animate={active ? "open" : "closed"}
         >
           {/* Top line */}
           <motion.span
-            style={{ y: "-50%", left: "50%", x: "-50%", top: "20%" }}
+            style={{ y: "-50%", right: "0%", x: "0%", top: "20%" }}
             className="absolute h-[2.3px] w-[6vw] bg-[#36196A] xs:h-[2.7px] sm:w-[5vw]"
             variants={{
               open: {
@@ -97,7 +97,7 @@ const Hambutton = () => {
 
           {/* Middle line */}
           <motion.span
-            style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+            style={{ right: "0%", x: "0%", top: "50%", y: "-50%" }}
             className="absolute h-[2.3px] w-[6vw] bg-[#36196A] sm:w-[5vw]"
             variants={{
               open: { rotate: ["0deg", "0deg", "-45deg"] },
@@ -107,7 +107,7 @@ const Hambutton = () => {
 
           {/* Bottom line */}
           <motion.span
-            style={{ x: "-50%", y: "50%", bottom: "35%", left: "50%" }}
+            style={{ x: "0%", y: "50%", bottom: "35%", right: "0%" }}
             className="absolute h-[2.3px] w-[6vw] bg-[#36196A] xs:h-[2.7px] sm:w-[5vw]"
             variants={{
               open: {
