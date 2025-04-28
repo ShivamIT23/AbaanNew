@@ -7,14 +7,14 @@ const Navbar = () => {
   return (
     <nav className="w-full navbar max-w-[96svw] z-10 absolute left-0 top-0 sm:pt-3 md:pt-2 px-[8vw] lg:px-[9vw]">
       <div className="relative w-full flex justify-between items-center p-2">
-        <div className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
+        <Link to="/" className="w-fit p-[1vw] pb-[1.7vw] md:p-[0.7vw] md:pb-[1.3vw] lg:pb-[0.8vw] bg-[#EC1D23] rounded-[0.7vw] md:rounded-[0.5vw]">
           <img
             loading="lazy"
             src="/images/logo.png"
             className="mix-blend-screen max-w-[20vw] xs:w-[15vw] sm:w-[13vw] md:w-[7vw] lg:w-[6vw] "
             alt=""
           />
-        </div>
+        </Link>
         <div className=" text-[7vw] flex justify-end w-full items-center cursor-pointer md:hidden">
           <Hambutton />
         </div>
