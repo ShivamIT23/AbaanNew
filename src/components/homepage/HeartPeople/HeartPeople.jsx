@@ -78,7 +78,7 @@ export default function HeartPeople({ startAnimation }) {
           alt=""
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20%]"
         />
-        <h3 className="globalHeaderFont text-5xl text-center lg:text-6xl pt-4 px-[5vw] w-full">
+        <h3 className=" heartText leading-[1.4] text-5xl text-center lg:text-[3.75rem] pt-4 px-[5vw] w-full">
           Hear from Our <span>Happy Chocolate </span>Lovers
         </h3>
 
@@ -145,49 +145,49 @@ export default function HeartPeople({ startAnimation }) {
           loading="lazy"
           src="/images/person1.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] left-0 md:left-[8%] xl:left-[15%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] left-0 md:left-[8%] xl:left-[13%]"
         />
         <img
           loading="lazy"
           src="/images/person2.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] left-[2.5%] md:left-[12%] xl:left-[18%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] left-[2.5%] md:left-[12%] xl:left-[16%]"
         />
         <img
           loading="lazy"
           src="/images/person3.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] left-[5%] md:left-[15%] xl:left-[25%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] left-[5%] md:left-[15%] xl:left-[23%]"
         />
         <img
           loading="lazy"
           src="/images/person4.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] left-[7.5%] md:left-[20%] xl:left-[30%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] left-[7.5%] md:left-[20%] xl:left-[28%]"
         />
         <img
           loading="lazy"
           src="/images/person5.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] right-[0%] md:right-[8%] xl:right-[15%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[10%] md:top-[30%] right-[0%] md:right-[8%] xl:right-[13%]"
         />
         <img
           loading="lazy"
           src="/images/person6.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] right-[2.5%] md:right-[12%] xl:right-[18%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[60%] right-[2.5%] md:right-[12%] xl:right-[16%]"
         />
         <img
           loading="lazy"
           src="/images/person7.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] right-[5%] md:right-[15%] xl:right-[25%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[35%] md:top-[40%] right-[5%] md:right-[15%] xl:right-[23%]"
         />
         <img
           loading="lazy"
           src="/images/person8.png"
           alt=""
-          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] right-[7.5%] md:right-[20%] xl:right-[30%]"
+          className="w-12 sm:w-16 lg:w-20 absolute top-[85%] md:top-[70%] right-[7.5%] md:right-[20%] xl:right-[28%]"
         />
       </>
     </motion.div>

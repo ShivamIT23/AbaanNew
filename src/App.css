@@ -9,6 +9,16 @@
   color: #ec1d23;
 }
 
+.heartText{
+  font-family: "Berkshire Swash", sans-serif;
+  font-weight: 400;
+  color: #212529;
+}
+
+.heartText span {
+  color: #ec1d23;
+}
+
 .globalPadding {
   padding-left: 7vw;
   padding-right: 7vw;
