@@ -9,7 +9,7 @@ import Category from "../components/homepage/Category/Category";
 import Sellers from "../components/Sellers/Sellers";
 import HeartPeople from "../components/homepage/HeartPeople/HeartPeople";
 import Arrival from "../components/Arrival/Arrival";
-import Instagram from "../components/Instagram/Instagram";
+// import Instagram from "../components/Instagram/Instagram";
 import { motion } from "framer-motion";
 
 const pageVariants = {
@@ -60,7 +60,7 @@ const Home = () => {
       <Sellers startAnimation={startAnimation} />
       <HeartPeople startAnimation={startAnimation} />
       <Arrival startAnimation={startAnimation} />
-      <Instagram startAnimation={startAnimation} />
+      {/* <Instagram startAnimation={startAnimation} /> */}
     </motion.div>
   );
 };
